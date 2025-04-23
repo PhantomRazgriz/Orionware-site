@@ -4,47 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orionware - Soluzioni Software Innovative</title>
+    
+    <!-- CSS Principale -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Meta Description -->
     <meta name="description" content="Orionware - Azienda leader nello sviluppo software e soluzioni di intelligenza artificiale con 6 anni di esperienza nel settore IT.">
+    
+    <!-- Component Loader -->
+    <script src="js/utils/component-loader.js"></script>
 </head>
 <body>
-    <div class="loader-container">
-        <div class="loader">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-        </div>
-    </div>
+    <!-- Loader Component -->
+    <div data-component="loader"></div>
+    
+    <!-- Header Component -->
+    <div data-component="header" data-param-active-page="home"></div>
 
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">Orion<span class="highlight">ware</span></span>
-                </a>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="servizi.html">Servizi</a></li>
-                    <li><a href="progetti.html">Progetti</a></li>
-                    <li><a href="ai-solutions.html">AI Solutions</a></li>
-                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
-                    <li><a href="contatti.html">Contatti</a></li>
-                </ul>
-            </nav>
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-        </div>
-    </header>
-
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -64,6 +49,7 @@
         </div>
     </section>
 
+    <!-- Stats Banner -->
     <section class="stats-banner">
         <div class="container">
             <div class="stat-item">
@@ -85,6 +71,7 @@
         </div>
     </section>
 
+    <!-- Services Section -->
     <section class="services">
         <div class="container">
             <div class="section-header">
@@ -131,6 +118,7 @@
         </div>
     </section>
 
+    <!-- Featured Work Section -->
     <section class="featured-work">
         <div class="container">
             <div class="section-header">
@@ -187,6 +175,7 @@
         </div>
     </section>
 
+    <!-- AI Spotlight Section -->
     <section class="ai-spotlight">
         <div class="container">
             <div class="ai-content">
@@ -215,6 +204,7 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
@@ -271,86 +261,20 @@
         </div>
     </section>
 
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Pronto a trasformare la tua <span class="gradient-text">visione digitale</span> in realtà?</h2>
-                <p>Contattaci oggi stesso per una consulenza gratuita e scopri come Orionware può aiutarti a raggiungere i tuoi obiettivi tecnologici.</p>
-                <div class="cta-buttons">
-                    <a href="contatti.html" class="btn btn-primary">Contattaci</a>
-                    <a href="tel:+390123456789" class="btn btn-outline"><i class="fas fa-phone"></i> +39 0123 456789</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- CTA Component -->
+    <div data-component="cta" 
+         data-param-title="Pronto a trasformare la tua visione digitale in realtà?" 
+         data-param-description="Contattaci oggi stesso per una consulenza gratuita e scopri come Orionware può aiutarti a raggiungere i tuoi obiettivi tecnologici."
+         data-param-button-text="Contattaci"
+         data-param-phone="+39 0123 456789"></div>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <span class="logo-text">Orion<span class="highlight">ware</span></span>
-                    </div>
-                    <p>Trasformiamo le idee in soluzioni digitali innovative da 6 anni, accompagnando le aziende nel loro percorso di crescita tecnologica.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Link rapidi</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="servizi.html">Servizi</a></li>
-                        <li><a href="progetti.html">Progetti</a></li>
-                        <li><a href="ai-solutions.html">AI Solutions</a></li>
-                        <li><a href="chi-siamo.html">Chi Siamo</a></li>
-                        <li><a href="contatti.html">Contatti</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Servizi</h3>
-                    <ul class="footer-links">
-                        <li><a href="servizi.html#sviluppo-software">Sviluppo Software</a></li>
-                        <li><a href="servizi.html#app-mobile">App Mobile</a></li>
-                        <li><a href="ai-solutions.html">Intelligenza Artificiale</a></li>
-                        <li><a href="servizi.html#cloud-solutions">Cloud Solutions</a></li>
-                        <li><a href="servizi.html#consulenza-it">Consulenza IT</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contatti</h3>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> Via Tecnologica, 42 - Milano</li>
-                        <li><i class="fas fa-phone"></i> +39 0123 456789</li>
-                        <li><i class="fas fa-envelope"></i> info@orionware.it</li>
-                    </ul>
-                    <div class="newsletter">
-                        <h3>Newsletter</h3>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="La tua email" required>
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Orionware. Tutti i diritti riservati.</p>
-                <div class="footer-legal">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="termini-condizioni.html">Termini e Condizioni</a>
-                    <a href="cookie-policy.html">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Component -->
+    <div data-component="footer"></div>
 
-    <div class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
-    </div>
+    <!-- Back to Top Component -->
+    <div data-component="back-to-top"></div>
 
+    <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
 </html>
