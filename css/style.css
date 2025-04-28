@@ -110,10 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 3.5rem;
     margin-bottom: var(--spacing-md);
-    background: white;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: white; /* Testo bianco normale */
 }
 
 h2 {
@@ -151,13 +148,12 @@ section {
 }
 
 .gradient-text {
-    background-image: white;
+    background-image: rgb(255, 255, 255);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     display: inline-block;
 }
-
 .section-header {
     text-align: center;
     max-width: 800px;

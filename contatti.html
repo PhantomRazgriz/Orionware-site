@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Orionware</title>
+    
+    <!-- CSS Principale -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/contatti.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Contatta Orionware per informazioni sui nostri servizi di sviluppo software, soluzioni AI e consulenza tecnologica. Siamo qui per rispondere alle tue domande.">
+    
+    <!-- Component Loader -->
+    <script src="js/utils/component-loader.js"></script>
+</head>
+<body>
+    <!-- Loader Component -->
+    <div data-component="loader"></div>
+    
+    <!-- Header Component -->
+    <div data-component="header" data-param-active-page="contatti"></div>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Contattaci</h1>
+                <p>Siamo qui per rispondere alle tue domande e trasformare le tue idee in realtà</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="form-container">
+                    <div class="section-header left-aligned">
+                        <h2>Inviaci un messaggio</h2>
+                        <p>Compila il modulo sottostante e ti risponderemo al più presto</p>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome e Cognome *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefono</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Azienda</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="subject">Oggetto *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Messaggio *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <div class="privacy-check">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <label for="privacy">Ho letto e accetto la <a href="privacy.html">Privacy Policy</a> *</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn btn-primary">Invia messaggio</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="contact-info-container">
+                    <div class="contact-info-box">
+                        <h3>Informazioni di contatto</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <strong>Sede Principale</strong>
+                                    <p>Via dell'Innovazione, 42<br>20126 Milano, Italia</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="info-content">
+                                    <strong>Telefono</strong>
+                                    <p><a href="tel:+390123456789">+39 0123 456789</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-content">
+                                    <strong>Email</strong>
+                                    <p><a href="mailto:info@orionware.it">info@orionware.it</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="info-content">
+                                    <strong>Orari</strong>
+                                    <p>Lunedì - Venerdì: 9:00 - 18:00<br>Sabato - Domenica: Chiuso</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="social-container">
+                            <h4>Seguici sui social</h4>
+                            <div class="social-links">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dove trovarci</h2>
+                <p>Visita la nostra sede principale a Milano</p>
+            </div>
+            
+            <div class="map-container">
+                <!-- Placeholder per la mappa interattiva -->
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Mappa interattiva</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Secondary Offices Section -->
+    <section class="offices-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Le nostre sedi</h2>
+                <p>Siamo presenti in diverse città per essere più vicini ai nostri clienti</p>
+            </div>
+            
+            <div class="offices-grid">
+                <!-- Sede Milano (Principale) -->
+                <div class="office-card">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Milano</h3>
+                    <p class="office-type">Sede Principale</p>
+                    <address>
+                        Via dell'Innovazione, 42<br>
+                        20126 Milano, Italia
+                    </address>
+                    <div class="office-contact">
+                        <p><i class="fas fa-phone"></i> +39 0123 456789</p>
+                        <p><i class="fas fa-envelope"></i> milano@orionware.it</p>
+                    </div>
+                </div>
+                
+                <!-- Sede Roma -->
+                <div class="office-card">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Roma</h3>
+                    <p class="office-type">Sede Operativa</p>
+                    <address>
+                        Via del Tecnopolo, 15<br>
+                        00144 Roma, Italia
+                    </address>
+                    <div class="office-contact">
+                        <p><i class="fas fa-phone"></i> +39 0123 456790</p>
+                        <p><i class="fas fa-envelope"></i> roma@orionware.it</p>
+                    </div>
+                </div>
+                
+                <!-- Sede Torino -->
+                <div class="office-card">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Torino</h3>
+                    <p class="office-type">Centro R&D</p>
+                    <address>
+                        Corso Innovazione, 78<br>
+                        10129 Torino, Italia
+                    </address>
+                    <div class="office-contact">
+                        <p><i class="fas fa-phone"></i> +39 0123 456791</p>
+                        <p><i class="fas fa-envelope"></i> torino@orionware.it</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Domande Frequenti</h2>
+                <p>Risposte rapide alle tue domande</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quanto tempo impiegate a rispondere alle richieste?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ci impegniamo a rispondere a tutte le richieste entro 24 ore lavorative. Per problematiche più complesse che richiedono un'analisi approfondita, potremmo impiegare fino a 48 ore per fornire una risposta completa.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Posso richiedere un preventivo gratuito?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Assolutamente sì! Offriamo preventivi dettagliati e gratuiti per tutti i nostri servizi. Puoi richiederlo tramite il modulo di contatto, specificando nel messaggio tutte le informazioni sul progetto che ritieni utili per una valutazione accurata.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Lavorate anche con aziende all'estero?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sì, collaboriamo con clienti in tutta Europa e nel mondo. Grazie ai nostri strumenti di collaborazione remota e alla flessibilità oraria, possiamo gestire efficacemente progetti internazionali, garantendo una comunicazione costante e trasparente.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>È possibile fissare una call di consulenza prima di iniziare un progetto?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Certamente! Offriamo una prima call di consulenza gratuita della durata di 30 minuti per discutere le tue esigenze e valutare insieme la migliore strategia d'azione. Puoi richiedere un appuntamento tramite il modulo di contatto o chiamando direttamente i nostri uffici.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section">
+        <div class="container">
+            <div class="support-grid">
+                <div class="support-content">
+                    <div class="section-header left-aligned">
+                        <h2>Assistenza Clienti</h2>
+                        <div class="section-divider"></div>
+                    </div>
+                    <p>Il nostro team di supporto è a tua disposizione per risolvere qualsiasi problema tecnico o per fornirti assistenza sui nostri servizi.</p>
+                    <p>Per questioni tecniche urgenti, ti consigliamo di contattarci telefonicamente per ricevere assistenza immediata.</p>
+                    
+                    <div class="support-info">
+                        <div class="support-item">
+                            <div class="support-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="support-details">
+                                <h3>Supporto Tecnico</h3>
+                                <p>Assistenza per problemi tecnici e malfunzionamenti</p>
+                                <a href="tel:+390123456799" class="support-contact">+39 0123 456799</a>
+                                <span class="support-hours">Lun-Ven, 9:00-18:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="support-item">
+                            <div class="support-icon">
+                                <i class="fas fa-envelope-open-text"></i>
+                            </div>
+                            <div class="support-details">
+                                <h3>Email Support</h3>
+                                <p>Per domande non urgenti e richieste di informazioni</p>
+                                <a href="mailto:supporto@orionware.it" class="support-contact">supporto@orionware.it</a>
+                                <span class="support-hours">Risposta entro 24h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="support-visual">
+                    <div class="support-image-container">
+                        <!-- Placeholder per immagine supporto -->
+                        <div class="support-image-placeholder">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Component -->
+    <div data-component="cta" 
+         data-param-title="Hai un progetto da realizzare?" 
+         data-param-description="Contattaci oggi stesso per discutere della tua idea e trasformarla in realtà con le nostre soluzioni tecnologiche innovative."
+         data-param-button-text="Iniziamo insieme"
+         data-param-phone="+39 0123 456789"></div>
+
+    <!-- Footer Component -->
+    <div data-component="footer"></div>
+
+    <!-- Back to Top Component -->
+    <div data-component="back-to-top"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Script per gestire il form di contatto
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // In produzione, qui ci sarebbe il codice per inviare il form al server
+                    // Per ora simuliamo un invio con successo
+                    
+                    // Disabilita il pulsante durante l'invio
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Invio in corso...';
+                    
+                    // Simuliamo un ritardo di invio
+                    setTimeout(() => {
+                        // Reset del form
+                        contactForm.reset();
+                        
+                        // Mostra notifica di successo
+                        if (typeof window.showNotification === 'function') {
+                            window.showNotification('Grazie per averci contattato! Ti risponderemo al più presto.', 'success');
+                        } else {
+                            alert('Grazie per averci contattato! Ti risponderemo al più presto.');
+                        }
+                        
+                        // Ripristina il pulsante
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = 'Invia messaggio';
+                    }, 2000);
+                });
+            }
+            
+            // Script per gestire le FAQ
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const toggle = item.querySelector('.faq-toggle');
+                
+                question.addEventListener('click', () => {
+                    // Chiudi tutte le altre FAQ
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = '0';
+                            otherItem.querySelector('.faq-toggle i').className = 'fas fa-plus';
+                        }
+                    });
+                    
+                    // Apri/chiudi la FAQ corrente
+                    item.classList.toggle('active');
+                    
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        toggle.innerHTML = '<i class="fas fa-minus"></i>';
+                    } else {
+                        answer.style.maxHeight = '0';
+                        toggle.innerHTML = '<i class="fas fa-plus"></i>';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
