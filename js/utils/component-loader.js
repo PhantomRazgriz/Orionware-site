@@ -39,7 +39,7 @@ class ComponentLoader {
         const componentName = placeholder.getAttribute('data-component');
         
         try {
-            const response = await fetch(`/components/${componentName}.html`);
+            const response = await fetch(`components/${componentName}.html`);
             if (!response.ok) throw new Error(`Componente ${componentName} non trovato`);
             
             const html = await response.text();
