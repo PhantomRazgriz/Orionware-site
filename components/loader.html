@@ -1,0 +1,30 @@
+<div class="loader-container">
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+</div>
+
+<script>
+    // Script specifico per il componente loader
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inizializza il loader solo se non è già stato inizializzato
+        if (!window.loaderInitialized) {
+            const loader = document.querySelector('.loader-container');
+            
+            if (loader) {
+                // Nascondi il loader dopo un breve ritardo
+                setTimeout(function() {
+                    loader.classList.add('loaded');
+                    // Rimuovi il loader dal DOM dopo l'animazione
+                    setTimeout(function() {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 1500);
+            }
+            
+            window.loaderInitialized = true;
+        }
+    });
+</script>
