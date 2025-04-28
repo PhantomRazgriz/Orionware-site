@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 3.5rem;
     margin-bottom: var(--spacing-md);
-    background: var(--gradient-primary);
+    background: white;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -147,11 +147,11 @@ section {
 
 /* ===== UTILITIES ===== */
 .accent {
-    color: var(--primary);
+    color: white;
 }
 
 .gradient-text {
-    background-image: var(--gradient-primary);
+    background-image: white;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
