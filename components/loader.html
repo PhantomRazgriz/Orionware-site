@@ -7,24 +7,43 @@
 </div>
 
 <script>
-    // Script specifico per il componente loader
-    document.addEventListener('DOMContentLoaded', function() {
-        // Inizializza il loader solo se non è già stato inizializzato
-        if (!window.loaderInitialized) {
-            const loader = document.querySelector('.loader-container');
-            
-            if (loader) {
-                // Nascondi il loader dopo un breve ritardo
+    (function() {
+        // Mantieni traccia dello stato del loader per evitare duplicati
+        if (window.loaderInitialized) return;
+        window.loaderInitialized = true;
+        
+        const loader = document.querySelector('.loader-container');
+        if (!loader) return;
+        
+        // Funzione per rimuovere il loader in modo sicuro
+        function removeLoader() {
+            if (!loader.classList.contains('loaded')) {
+                console.log("Rimozione loader");
+                loader.classList.add('loaded');
                 setTimeout(function() {
-                    loader.classList.add('loaded');
-                    // Rimuovi il loader dal DOM dopo l'animazione
-                    setTimeout(function() {
-                        loader.style.display = 'none';
-                    }, 500);
-                }, 1500);
+                    loader.style.display = 'none';
+                }, 500);
             }
-            
-            window.loaderInitialized = true;
         }
-    });
+        
+        // Metodo 1: Timer standard (più affidabile)
+        setTimeout(removeLoader, 2000);
+        
+        // Metodo 2: Quando la pagina è completamente caricata
+        window.addEventListener('load', removeLoader);
+        
+        // Metodo 3: Quando i componenti sono caricati
+        document.addEventListener('componentsLoaded', removeLoader);
+        
+        // Metodo 4: Timer di fallback (sicurezza extra)
+        setTimeout(removeLoader, 5000);
+        
+        // Metodo 5: Verifica periodica (per catturare casi sporadici)
+        const checkInterval = setInterval(function() {
+            if (document.readyState === 'complete') {
+                removeLoader();
+                clearInterval(checkInterval);
+            }
+        }, 1000);
+    })();
 </script>
