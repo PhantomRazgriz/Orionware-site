@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetti - Orionware</title>
+    
+    <!-- CSS Principale -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/progetti.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Scopri i progetti realizzati da Orionware: case study, soluzioni software personalizzate e implementazioni di successo per aziende di diversi settori.">
+    
+    <!-- Component Loader -->
+    <script src="js/utils/component-loader.js"></script>
+</head>
+<body>
+    <!-- Loader Component -->
+    <div data-component="loader"></div>
+    
+    <!-- Header Component -->
+    <div data-component="header" data-param-active-page="progetti"></div>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>I nostri <span class="gradient-text">progetti</span></h1>
+                <p>Scopri come abbiamo trasformato sfide complesse in soluzioni di successo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Filter -->
+    <section class="projects-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Tutti</button>
+                <button class="filter-btn" data-filter="web">Web App</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="ai">Intelligenza Artificiale</button>
+                <button class="filter-btn" data-filter="cloud">Cloud</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-showcase">
+        <div class="container">
+            <div class="projects-grid">
+                <!-- Progetto 1: ERP Personalizzato -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Sistema ERP Personalizzato</h3>
+                                <p>Soluzione gestionale completa per un'azienda manifatturiera</p>
+                                <a href="#erp-custom" class="btn btn-small project-details-btn">Vedi dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Sistema ERP Personalizzato</h3>
+                        <div class="project-tags">
+                            <span>ERP</span>
+                            <span>Web App</span>
+                            <span>Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto 2: App Mobile E-commerce -->
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>App Mobile E-commerce</h3>
+                                <p>Applicazione mobile per una catena di negozi con funzionalità di acquisto e fedeltà</p>
+                                <a href="#ecommerce-app" class="btn btn-small project-details-btn">Vedi dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>App Mobile E-commerce</h3>
+                        <div class="project-tags">
+                            <span>Mobile</span>
+                            <span>E-commerce</span>
+                            <span>UX/UI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto 3: AI per Analisi Predittiva -->
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>AI per Analisi Predittiva</h3>
+                                <p>Sistema di analisi predittiva per ottimizzare le scorte di magazzino</p>
+                                <a href="#ai-predictive" class="btn btn-small project-details-btn">Vedi dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>AI per Analisi Predittiva</h3>
+                        <div class="project-tags">
+                            <span>AI</span>
+                            <span>Machine Learning</span>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto 4: Migrazione Cloud -->
+                <div class="project-card" data-category="cloud">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Migrazione Cloud Infrastructure</h3>
+                                <p>Migrazione completa dell'infrastruttura IT di un'azienda finanziaria verso il cloud</p>
+                                <a href="#cloud-migration" class="btn btn-small project-details-btn">Vedi dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Migrazione Cloud Infrastructure</h3>
+                        <div class="project-tags">
+                            <span>Cloud</span>
+                            <span>AWS</span>
+                            <span>DevOps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto 5: Portale Clienti -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Portale Clienti B2B</h3>
+                                <p>Piattaforma web per la gestione degli ordini e del supporto clienti per un'azienda B2B</p>
+                                <a href="#b2b-portal" class="btn btn-small project-details-btn">Vedi dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portale Clienti B2B</h3>
+                        <div class="project-tags">
+                            <span>Web App</span>
+                            <span>B2B</span>
+                            <span>CRM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto 6: App di Delivery -->
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>App di Food Delivery</h3>
+                                <p>Applicazione di consegna pasti per una startup del settore food</p>
+                                <a href="#food-delivery" class="btn btn-small project-details-btn">Vedi dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>App di Food Delivery</h3>
+                        <div class="project-tags">
+                            <span>Mobile</span>
+                            <span>Geolocation</span>
+                            <span>Payments</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div class="project-modal" id="project-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <!-- Content will be loaded dynamically with JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Details Sections -->
+    <div class="project-details-container" style="display: none;">
+        <!-- ERP Custom -->
+        <div id="erp-custom" class="project-detail">
+            <div class="project-header">
+                <h2>Sistema ERP Personalizzato</h2>
+                <div class="project-meta">
+                    <span class="client"><i class="fas fa-building"></i> Cliente: TechManufacturing SpA</span>
+                    <span class="duration"><i class="fas fa-calendar-alt"></i> Durata: 8 mesi</span>
+                    <span class="tech"><i class="fas fa-code"></i> Tecnologie: React, Node.js, MongoDB</span>
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <h3>La sfida</h3>
+                <p>TechManufacturing SpA, azienda leader nel settore manifatturiero con oltre 200 dipendenti, necessitava di un sistema gestionale completo per integrare tutti i processi aziendali, dalla produzione alla logistica, fino alla gestione delle vendite e del personale. I software gestionali standard sul mercato non offrivano la flessibilità necessaria per adattarsi ai loro specifici flussi di lavoro.</p>
+                
+                <h3>La soluzione</h3>
+                <p>Abbiamo sviluppato un ERP personalizzato con moduli specifici per:</p>
+                <ul class="feature-list">
+                    <li>Gestione della produzione con pianificazione automatizzata</li>
+                    <li>Monitoraggio in tempo reale dello stato della produzione</li>
+                    <li>Sistema di gestione magazzino con tracciabilità completa</li>
+                    <li>Modulo CRM integrato per la gestione clienti e opportunità</li>
+                    <li>Dashboard personalizzati per ogni reparto</li>
+                    <li>Sistema di reportistica avanzato</li>
+                </ul>
+                
+                <div class="results-section">
+                    <h3>Risultati</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="result-value">+30%</div>
+                            <div class="result-label">Efficienza produttiva</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-clock"></i></div>
+                            <div class="result-value">-40%</div>
+                            <div class="result-label">Tempo gestione ordini</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-coins"></i></div>
+                            <div class="result-value">-25%</div>
+                            <div class="result-label">Costi operativi</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="client-testimonial">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>
+                        "Il sistema ERP sviluppato da Orionware ha trasformato radicalmente i nostri processi aziendali. Ora abbiamo visibilità completa su tutta la catena produttiva e decisioni più rapide e informate. Un investimento che ha ripagato ampiamente le aspettative."
+                    </blockquote>
+                    <div class="testimonial-author">Marco Verdi, CTO di TechManufacturing SpA</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ecommerce App -->
+        <div id="ecommerce-app" class="project-detail">
+            <div class="project-header">
+                <h2>App Mobile E-commerce</h2>
+                <div class="project-meta">
+                    <span class="client"><i class="fas fa-building"></i> Cliente: RetailPlus</span>
+                    <span class="duration"><i class="fas fa-calendar-alt"></i> Durata: 6 mesi</span>
+                    <span class="tech"><i class="fas fa-code"></i> Tecnologie: React Native, Firebase, Node.js</span>
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <h3>La sfida</h3>
+                <p>RetailPlus, una catena di negozi di abbigliamento con 25 punti vendita in Italia, voleva incrementare le vendite online e migliorare l'esperienza di acquisto omnicanale. Avevano bisogno di un'app mobile che integrasse e-commerce, programma fedeltà e supporto clienti in un'unica soluzione.</p>
+                
+                <h3>La soluzione</h3>
+                <p>Abbiamo sviluppato un'app mobile cross-platform con le seguenti funzionalità:</p>
+                <ul class="feature-list">
+                    <li>Catalogo prodotti con ricerca avanzata e filtri</li>
+                    <li>Sistema di raccomandazione basato sulle preferenze dell'utente</li>
+                    <li>Integrazione con il sistema di loyalty points e coupon</li>
+                    <li>Funzionalità "scan & shop" nei negozi fisici</li>
+                    <li>Notifiche push per offerte personalizzate</li>
+                    <li>Assistente virtuale per supporto clienti</li>
+                </ul>
+                
+                <div class="results-section">
+                    <h3>Risultati</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-shopping-bag"></i></div>
+                            <div class="result-value">+45%</div>
+                            <div class="result-label">Vendite online</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-user-plus"></i></div>
+                            <div class="result-value">+20k</div>
+                            <div class="result-label">Nuovi utenti</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-redo-alt"></i></div>
+                            <div class="result-value">+35%</div>
+                            <div class="result-label">Frequenza acquisti</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="client-testimonial">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>
+                        "L'app sviluppata da Orionware ha superato le nostre aspettative. Non solo ha incrementato significativamente le vendite online, ma ha anche migliorato l'esperienza nei nostri negozi fisici. La facilità d'uso e le funzionalità innovative hanno ricevuto feedback estremamente positivi dai nostri clienti."
+                    </blockquote>
+                    <div class="testimonial-author">Laura Rossi, Marketing Director di RetailPlus</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI Predictive -->
+        <div id="ai-predictive" class="project-detail">
+            <!-- Contenuto dettagliato del progetto AI -->
+            <div class="project-header">
+                <h2>AI per Analisi Predittiva</h2>
+                <div class="project-meta">
+                    <span class="client"><i class="fas fa-building"></i> Cliente: LogisticsPro</span>
+                    <span class="duration"><i class="fas fa-calendar-alt"></i> Durata: 4 mesi</span>
+                    <span class="tech"><i class="fas fa-code"></i> Tecnologie: Python, TensorFlow, AWS</span>
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <h3>La sfida</h3>
+                <p>LogisticsPro, un importante operatore logistico con un vasto magazzino di prodotti, affrontava sfide significative nella gestione delle scorte. L'azienda voleva ridurre i costi di magazzino mantenendo al contempo livelli di servizio elevati, evitando sia l'eccesso di scorte che le rotture di stock.</p>
+                
+                <h3>La soluzione</h3>
+                <p>Abbiamo implementato un sistema di analisi predittiva basato su intelligenza artificiale che:</p>
+                <ul class="feature-list">
+                    <li>Analizza i dati storici di vendita con algoritmi di machine learning</li>
+                    <li>Prevede la domanda futura con precisione superiore al 90%</li>
+                    <li>Ottimizza automaticamente i livelli di riordino</li>
+                    <li>Identifica pattern stagionali e trend emergenti</li>
+                    <li>Si integra con i sistemi ERP e WMS esistenti</li>
+                    <li>Fornisce dashboard in tempo reale per il monitoraggio</li>
+                </ul>
+                
+                <div class="results-section">
+                    <h3>Risultati</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-box"></i></div>
+                            <div class="result-value">-32%</div>
+                            <div class="result-label">Livelli di inventario</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div class="result-value">-85%</div>
+                            <div class="result-label">Rotture di stock</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-euro-sign"></i></div>
+                            <div class="result-value">+1.2M€</div>
+                            <div class="result-label">Risparmio annuale</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="client-testimonial">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>
+                        "Il sistema di analisi predittiva di Orionware ha rivoluzionato la nostra gestione dell'inventario. La precisione delle previsioni ci ha permesso di ridurre drasticamente i costi mantenendo un livello di servizio eccellente. È stata una trasformazione straordinaria per la nostra operatività."
+                    </blockquote>
+                    <div class="testimonial-author">Giovanni Bianchi, Supply Chain Director di LogisticsPro</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Altri progetti dettagliati possono essere aggiunti qui -->
+    </div>
+
+    <!-- CTA Component -->
+    <div data-component="cta" 
+         data-param-title="Hai un progetto in mente?" 
+         data-param-description="Parlaci delle tue sfide tecnologiche e scopri come possiamo aiutarti a realizzare la tua visione."
+         data-param-button-text="Contattaci"
+         data-param-phone="+39 0123 456789"></div>
+
+    <!-- Footer Component -->
+    <div data-component="footer"></div>
+
+    <!-- Back to Top Component -->
+    <div data-component="back-to-top"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Script per il filtro dei progetti
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            // Filtro progetti
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Rimuovi classe active da tutti i bottoni
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Aggiungi classe active al bottone cliccato
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Modal per i dettagli del progetto
+            const modal = document.getElementById('project-modal');
+            const modalBody = modal.querySelector('.modal-body');
+            const closeModal = modal.querySelector('.close-modal');
+            const detailsButtons = document.querySelectorAll('.project-details-btn');
+            const projectDetails = document.querySelectorAll('.project-detail');
+            
+            // Apri modal quando clicchi sul pulsante dettagli
+            detailsButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetDetail = document.getElementById(targetId);
+                    
+                    if (targetDetail) {
+                        modalBody.innerHTML = targetDetail.innerHTML;
+                        modal.style.display = 'flex';
+                        document.body.style.overflow = 'hidden'; // Blocca lo scroll della pagina
+                    }
+                });
+            });
+            
+            // Chiudi modal
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Ripristina lo scroll
+            });
+            
+            // Chiudi modal se clicchi fuori dal contenuto
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
