@@ -1,0 +1,46 @@
+<div class="back-to-top">
+    <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+    // Script specifico per il componente back-to-top
+    document.addEventListener('DOMContentLoaded', function() {
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        if (backToTopBtn) {
+            // Mostra/nascondi il pulsante in base allo scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            // Scrolling verso l'alto quando viene cliccato
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Aggiungi effetto hover
+            backToTopBtn.addEventListener('mouseenter', function() {
+                this.classList.add('hover');
+            });
+            
+            backToTopBtn.addEventListener('mouseleave', function() {
+                this.classList.remove('hover');
+            });
+        }
+    });
+</script>
+
+<style>
+    /* Stili aggiuntivi per l'effetto hover */
+    .back-to-top.hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 25px rgba(207, 53, 75, 0.7);
+    }
+</style>

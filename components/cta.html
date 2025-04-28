@@ -1,0 +1,50 @@
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>{{title}}</h2>
+            <p>{{description}}</p>
+            <div class="cta-buttons">
+                <a href="contatti.html" class="btn btn-primary">{{button-text}}</a>
+                <a href="tel:{{phone}}" class="btn btn-secondary"><i class="fas fa-phone"></i> Chiamaci</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Script specifico per il componente CTA
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inizializza eventuali funzionalità specifiche del CTA
+        // Ad esempio, potremmo aggiungere tracking degli eventi di click sui pulsanti
+        
+        const ctaButtons = document.querySelectorAll('.cta-buttons .btn');
+        
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Qui potremmo inserire il tracking degli eventi
+                // console.log('CTA button clicked:', this.textContent.trim());
+                
+                // Se il pulsante è un link telefonico, possiamo aggiungere una piccola animazione
+                if (this.href.startsWith('tel:')) {
+                    this.classList.add('pulse');
+                    setTimeout(() => {
+                        this.classList.remove('pulse');
+                    }, 500);
+                }
+            });
+        });
+    });
+</script>
+
+<style>
+    /* Stili specifici per il componente CTA che si aggiungono a quelli generali */
+    .cta-buttons .btn.pulse {
+        animation: pulse-animation 0.5s ease-out;
+    }
+    
+    @keyframes pulse-animation {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+</style>
