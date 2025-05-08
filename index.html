@@ -72,51 +72,246 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>I nostri servizi</h2>
-                <p>Soluzioni su misura per ogni esigenza digitale della tua azienda</p>
+    <!-- NUOVO MARKUP HTML PER LA SEZIONE SERVIZI -->
+<section class="services-section">
+    <div class="services-background">
+        <div class="animated-shape shape1"></div>
+        <div class="animated-shape shape2"></div>
+        <div class="animated-shape shape3"></div>
+    </div>
+    
+    <div class="container">
+        <div class="services-header">
+            <h2 class="section-title">I nostri servizi</h2>
+            <p class="section-subtitle">Soluzioni tecnologiche personalizzate per il tuo business</p>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="services-tabs">
+            <div class="tabs-navigation">
+                <button class="tab-button active" data-service="sviluppo">
+                    <i class="fas fa-code"></i>
+                    <span>Sviluppo Software</span>
+                </button>
+                <button class="tab-button" data-service="mobile">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>App Mobile</span>
+                </button>
+                <button class="tab-button" data-service="ai">
+                    <i class="fas fa-brain"></i>
+                    <span>Intelligenza Artificiale</span>
+                </button>
+                <button class="tab-button" data-service="cloud">
+                    <i class="fas fa-cloud"></i>
+                    <span>Cloud Solutions</span>
+                </button>
             </div>
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
+            
+            <div class="tabs-content">
+                <!-- CONTENUTO TAB SVILUPPO SOFTWARE -->
+                <div class="tab-panel active" id="sviluppo-panel">
+                    <div class="service-content">
+                        <div class="service-description">
+                            <h3>Sviluppo Software Personalizzato</h3>
+                            <p>Creiamo applicazioni software su misura per rispondere esattamente alle esigenze della tua azienda, ottimizzando processi e aumentando l'efficienza operativa.</p>
+                            
+                            <div class="service-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Applicazioni web avanzate</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Sistemi gestionali ERP/CRM</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Dashboard e reportistica</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Integrazione con sistemi esistenti</span>
+                                </div>
+                            </div>
+                            
+                            <a href="servizi.html#sviluppo-software" class="service-link">
+                                Scopri di più
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="service-image">
+                            <div class="image-placeholder">
+                                <div class="tech-icon"><i class="fab fa-react"></i></div>
+                                <div class="tech-icon"><i class="fab fa-js-square"></i></div>
+                                <div class="tech-icon"><i class="fab fa-node-js"></i></div>
+                                <div class="tech-icon"><i class="fab fa-python"></i></div>
+                                <div class="code-lines">
+                                    <span class="code-line"></span>
+                                    <span class="code-line"></span>
+                                    <span class="code-line"></span>
+                                    <span class="code-line"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Sviluppo Software</h3>
-                    <p>Creiamo applicazioni software personalizzate, scalabili e ad alte prestazioni per ogni settore.</p>
-                    <a href="servizi.html#sviluppo-software" class="read-more">Scopri di più <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                
+                <!-- CONTENUTO TAB APP MOBILE -->
+                <div class="tab-panel" id="mobile-panel">
+                    <div class="service-content">
+                        <div class="service-description">
+                            <h3>Sviluppo App Mobile</h3>
+                            <p>Portiamo la tua attività sui dispositivi mobili con applicazioni native o cross-platform progettate per offrire un'esperienza utente eccezionale su iOS e Android.</p>
+                            
+                            <div class="service-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>App native e cross-platform</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Integrazione con API esistenti</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>UX/UI design mobile-first</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Funzionalità offline e sincronizzazione</span>
+                                </div>
+                            </div>
+                            
+                            <a href="servizi.html#app-mobile" class="service-link">
+                                Scopri di più
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="service-image">
+                            <div class="image-placeholder">
+                                <div class="phone-mockup">
+                                    <div class="phone-screen"></div>
+                                    <div class="phone-notch"></div>
+                                    <div class="phone-button"></div>
+                                    <div class="phone-elements">
+                                        <span class="element"></span>
+                                        <span class="element"></span>
+                                        <span class="element"></span>
+                                    </div>
+                                </div>
+                                <div class="tech-icon"><i class="fab fa-android"></i></div>
+                                <div class="tech-icon"><i class="fab fa-apple"></i></div>
+                                <div class="tech-icon"><i class="fab fa-react"></i></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>App Mobile</h3>
-                    <p>Sviluppiamo applicazioni mobile intuitive e performanti per Android e iOS.</p>
-                    <a href="servizi.html#app-mobile" class="read-more">Scopri di più <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
+                
+                <!-- CONTENUTO TAB INTELLIGENZA ARTIFICIALE -->
+                <div class="tab-panel" id="ai-panel">
+                    <div class="service-content">
+                        <div class="service-description">
+                            <h3>Soluzioni di Intelligenza Artificiale</h3>
+                            <p>Implementiamo tecnologie AI avanzate per analizzare dati, automatizzare processi e generare insight preziosi per il tuo business, trasformando le informazioni in valore aziendale.</p>
+                            
+                            <div class="service-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Machine Learning e analisi predittiva</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Natural Language Processing</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Computer Vision</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Sistemi di raccomandazione personalizzati</span>
+                                </div>
+                            </div>
+                            
+                            <a href="ai-solutions.html" class="service-link">
+                                Scopri di più
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="service-image">
+                            <div class="image-placeholder">
+                                <div class="neural-network">
+                                    <div class="network-node n1"></div>
+                                    <div class="network-node n2"></div>
+                                    <div class="network-node n3"></div>
+                                    <div class="network-node n4"></div>
+                                    <div class="network-node n5"></div>
+                                    <div class="network-node n6"></div>
+                                    <div class="network-node n7"></div>
+                                    <div class="network-connection c1"></div>
+                                    <div class="network-connection c2"></div>
+                                    <div class="network-connection c3"></div>
+                                    <div class="network-connection c4"></div>
+                                    <div class="network-connection c5"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Intelligenza Artificiale</h3>
-                    <p>Implementiamo soluzioni di AI per ottimizzare i processi e analizzare i dati aziendali.</p>
-                    <a href="ai-solutions.html" class="read-more">Scopri di più <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
+                
+                <!-- CONTENUTO TAB CLOUD SOLUTIONS -->
+                <div class="tab-panel" id="cloud-panel">
+                    <div class="service-content">
+                        <div class="service-description">
+                            <h3>Cloud Solutions</h3>
+                            <p>Migra e ottimizza la tua infrastruttura IT nel cloud per migliorare l'agilità, la scalabilità e ridurre i costi operativi con soluzioni personalizzate e sicure.</p>
+                            
+                            <div class="service-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Migrazione cloud-native</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Architetture serverless</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>CI/CD e DevOps</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Sicurezza e compliance</span>
+                                </div>
+                            </div>
+                            
+                            <a href="servizi.html#cloud-solutions" class="service-link">
+                                Scopri di più
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="service-image">
+                            <div class="image-placeholder">
+                                <div class="cloud-servers">
+                                    <div class="server-rack"></div>
+                                    <div class="server-rack"></div>
+                                    <div class="cloud-shape"></div>
+                                    <div class="tech-icon"><i class="fab fa-aws"></i></div>
+                                    <div class="tech-icon"><i class="fab fa-google"></i></div>
+                                    <div class="tech-icon"><i class="fab fa-microsoft"></i></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Cloud Solutions</h3>
-                    <p>Offriamo servizi di migrazione, gestione e ottimizzazione delle infrastrutture cloud.</p>
-                    <a href="servizi.html#cloud-solutions" class="read-more">Scopri di più <i class="fas fa-arrow-right"></i></a>
                 </div>
-            </div>
-            <div class="services-cta">
-                <a href="servizi.html" class="btn btn-outline">Tutti i servizi</a>
             </div>
         </div>
-    </section>
+        
+        <div class="services-action">
+            <a href="servizi.html" class="btn btn-primary">Tutti i servizi</a>
+        </div>
+    </div>
+</section>
 
     <!-- Featured Work Section -->
     <section class="featured-work">
@@ -276,5 +471,9 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+    <script src="js/components/services-tabs.js"></script>
+
+
+
 </body>
 </html>
