@@ -1,0 +1,74 @@
+/**
+ * Orionware - Back to Top Component Styles
+ */
+
+/* ===== BACK TO TOP BUTTON ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-image: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    z-index: 99;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(207, 53, 75, 0.4);
+}
+
+/* Effetto pulsazione quando il pulsante appare */
+.back-to-top.visible {
+    animation: pulse-back-to-top 2s infinite;
+}
+
+@keyframes pulse-back-to-top {
+    0% {
+        box-shadow: 0 0 0 0 rgba(207, 53, 75, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(207, 53, 75, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(207, 53, 75, 0);
+    }
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+}

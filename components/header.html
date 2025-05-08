@@ -23,47 +23,4 @@
     </div>
 </header>
 
-<script>
-    // Script specifico per il componente header
-    document.addEventListener('DOMContentLoaded', function() {
-        // Inizializza il mobile menu, ma solo se non è già stato inizializzato
-        if (!window.headerInitialized) {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (hamburger && navLinks) {
-                hamburger.addEventListener('click', function() {
-                    hamburger.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                    document.body.classList.toggle('menu-open');
-                });
-                
-                // Chiudi il menu quando si clicca su un link
-                const navItems = document.querySelectorAll('.nav-links a');
-                navItems.forEach(item => {
-                    item.addEventListener('click', function() {
-                        if (hamburger.classList.contains('active')) {
-                            hamburger.classList.remove('active');
-                            navLinks.classList.remove('active');
-                            document.body.classList.remove('menu-open');
-                        }
-                    });
-                });
-            }
-            
-            // Effetto scrolling per l'header
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('header');
-                if (header) {
-                    if (window.scrollY > 50) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-                }
-            });
-            
-            window.headerInitialized = true;
-        }
-    });
-</script>
+<!-- Rimuovo lo script qui per evitare conflitti con main.js -->
