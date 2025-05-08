@@ -260,32 +260,30 @@
 /* Nuovo stile per tags */
 .project-tags {
     position: absolute;
-    top: var(--spacing-sm);
-    right: var(--spacing-sm);
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     flex-wrap: wrap;
+    padding: var(--spacing-sm);
     gap: 8px;
-    justify-content: flex-end;
-    max-width: 70%;
+    background: linear-gradient(to top, rgba(30, 21, 41, 0.9), transparent);
+    transition: transform var(--transition-normal);
     z-index: 2;
 }
 
 .project-tags span {
-    background-color: rgba(207, 53, 75, 0.8);
+    background-color: rgba(207, 53, 75, 0.3);
     color: var(--light);
     font-size: 0.8rem;
     font-weight: 600;
     padding: 3px 10px;
     border-radius: var(--radius-full);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(207, 53, 75, 0.5);
 }
 
-.project-card:hover .project-tags span {
-    background-color: var(--primary);
-    transform: translateY(-3px);
+.project-card:hover .project-tags {
+    transform: translateY(100%);
 }
 
 /* ===== PROJECT MODAL ===== */
