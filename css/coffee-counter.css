@@ -1,0 +1,202 @@
+/* 
+   Stili avanzati per il contatore di caffè - Animazioni creative
+*/
+
+/* Contenitore principale con posizionamento relativo */
+.stat-item:nth-child(3) {
+    position: relative;
+    overflow: visible;
+}
+
+/* Creazione di una tazzina di caffè più elaborata con pseudo-elementi */
+.stat-item:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background-color: #cf354b;
+    border-radius: 0 0 10px 10px;
+    top: -25px;
+    right: 20px;
+    transform-origin: bottom center;
+    animation: tazza-dondola 3s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(207, 53, 75, 0.4);
+}
+
+/* Manico della tazzina */
+.stat-item:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #cf354b;
+    border-radius: 50%;
+    border-right: transparent;
+    border-bottom: transparent;
+    top: -20px;
+    right: 10px;
+    transform: rotate(-45deg);
+    animation: manico-appare 3s ease-in-out infinite;
+}
+
+/* Vapore del caffè - creazione di diversi elementi di vapore */
+.coffee-counter::before,
+.coffee-counter::after {
+    position: absolute;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+/* Primo elemento vapore */
+.coffee-counter::before {
+    width: 6px;
+    height: 6px;
+    top: -30px;
+    right: 25px;
+    animation: vapore-1 4s ease-in-out infinite;
+}
+
+/* Secondo elemento vapore */
+.coffee-counter::after {
+    width: 8px;
+    height: 8px;
+    top: -25px;
+    right: 15px;
+    animation: vapore-2 3.5s ease-in-out infinite;
+}
+
+/* Stile numerico del contatore */
+.coffee-counter {
+    background: linear-gradient(135deg, #cf354b 0%, #a82a3c 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent !important;
+    position: relative;
+    text-shadow: 0 0 15px rgba(207, 53, 75, 0.5);
+    animation: numero-pulsante 2s ease-in-out infinite alternate;
+}
+
+/* Animazione del contatore numerico con effetto "risveglio caffè" */
+@keyframes numero-pulsante {
+    0% {
+        transform: scale(1);
+        filter: brightness(0.9);
+    }
+    30% {
+        transform: scale(1.02);
+        filter: brightness(1);
+    }
+    60% {
+        transform: scale(1.01);
+        filter: brightness(1.1);
+    }
+    100% {
+        transform: scale(1.04);
+        filter: brightness(1.2);
+    }
+}
+
+/* Animazione della tazzina oscillante */
+@keyframes tazza-dondola {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    25% {
+        transform: rotate(0deg) translateY(-2px);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(0deg) translateY(-1px);
+    }
+}
+
+/* Animazione del manico della tazza */
+@keyframes manico-appare {
+    0%, 100% {
+        opacity: 0.7;
+        transform: rotate(-45deg) scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: rotate(-40deg) scale(1.05);
+    }
+}
+
+/* Animazioni per gli elementi di vapore */
+@keyframes vapore-1 {
+    0% {
+        opacity: 0;
+        transform: translateY(0) translateX(0) scale(0.5);
+    }
+    20% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
+        transform: translateY(-15px) translateX(-5px) scale(1.2);
+    }
+    80% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-25px) translateX(-8px) scale(0.8);
+    }
+}
+
+@keyframes vapore-2 {
+    0% {
+        opacity: 0;
+        transform: translateY(0) translateX(0) scale(0.5);
+    }
+    30% {
+        opacity: 0.7;
+    }
+    60% {
+        opacity: 0.5;
+        transform: translateY(-20px) translateX(10px) scale(1.5);
+    }
+    90% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px) translateX(5px) scale(0.8);
+    }
+}
+
+/* Aggiungiamo alcuni bean di caffè che cadono in occasione di incrementi significativi */
+@keyframes bean-drop {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) rotate(0deg);
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(100px) rotate(180deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(150px) rotate(360deg);
+    }
+}
+
+/* Creazione di un bean di caffè che cade ogni 50 incrementi */
+.coffee-counter[data-bean]::before {
+    content: '●';
+    font-size: 10px;
+    color: #5e3023;
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    opacity: 0;
+    z-index: 10;
+    animation: bean-drop 2s ease-out forwards;
+}
