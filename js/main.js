@@ -107,6 +107,22 @@ function initStatsAnimation() {
     
     function animateStats() {
         statNumbers.forEach(stat => {
+            // Per il contatore di caffè, implementazione separata
+            if (stat.classList.contains('coffee-counter')) {
+                // Valore iniziale del contatore caffè
+                let count = 3428;
+                stat.textContent = count;
+                
+                // Incrementa il contatore ogni 6 secondi
+                setInterval(function() {
+                    count++;
+                    stat.textContent = count;
+                }, 6000);
+                
+                return;
+            }
+            
+            // Per gli altri contatori, animazione standard
             const target = parseInt(stat.getAttribute('data-count'));
             const duration = 2000; // 2 secondi per completare l'animazione
             const step = target / duration * 10; // Incremento per ogni 10ms
