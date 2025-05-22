@@ -1,16 +1,9 @@
-/* 
-   Orionware - Servizi Page Styles
-*/
-
-/* ===== HERO SECTION ===== */
 .page-hero {
     position: relative;
     min-height: 40vh;
     background-color: var(--dark);
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
     padding: 10rem 0 5rem;
     overflow: hidden;
 }
@@ -31,22 +24,115 @@
 .page-hero-content {
     position: relative;
     z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
     max-width: 800px;
+    margin: 0 auto;
 }
 
-.page-hero h1 {
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text h1 {
     font-size: 3.5rem;
     margin-bottom: var(--spacing-md);
     text-shadow: 0 0 20px rgba(30, 21, 41, 0.8);
+    color: var(--light);
 }
 
-.page-hero p {
+.hero-text p {
     font-size: 1.3rem;
     margin-bottom: 0;
     color: rgba(255, 255, 255, 0.9);
 }
 
+.hero-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    min-width: 120px;
+}
+
+.floating-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(207, 53, 75, 0.3);
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.floating-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(207, 53, 75, 0.5);
+}
+
+.floating-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.floating-icon:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.floating-icon:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.floating-icon:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+/* Animazione float per le icone */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px);
+    }
+    50% { 
+        transform: translateY(-20px);
+    }
+}
+
+/* Effetto pulsazione aggiuntivo */
+.floating-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: inherit;
+    z-index: -1;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
 /* ===== SERVICES OVERVIEW ===== */
+
 .services-overview {
     background-color: var(--dark);
     padding: var(--spacing-xl) 0;
@@ -78,7 +164,7 @@
     line-height: 1.8;
 }
 
-/* ===== SERVICE DETAILS ===== */
+
 .service-details {
     background-color: var(--secondary);
     padding: var(--spacing-xl) 0;
@@ -118,6 +204,10 @@
     margin-bottom: 0;
 }
 
+.service-item .service-icon {
+    margin-bottom: var(--spacing-md); /* Mantieni il margine inferiore esistente */
+}
+
 .service-content {
     flex: 0 0 60%;
     padding: var(--spacing-lg);
@@ -130,6 +220,14 @@
     overflow: hidden;
 }
 
+.tab-button i {
+    margin-right: 12px; /* Aumentato da 8px per dare più respiro tra icona e testo */
+}
+.tab-button {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Aggiunge uno spazio esplicito tra gli elementi */
+}
 /* Placeholder backgrounds for service images */
 #sviluppo-software .service-image {
     background-image: linear-gradient(135deg, rgba(207, 53, 75, 0.7), rgba(63, 34, 69, 0.7));
@@ -216,7 +314,11 @@
     margin-right: var(--spacing-sm);
     font-size: 1.1rem;
 }
-
+.service-features li i {
+    margin-right: var(--spacing-sm); /* Usa la variabile di spaziatura per consistenza */
+    min-width: 16px; /* Assicura una larghezza minima dell'icona */
+    text-align: center; /* Centra l'icona nel suo spazio */
+}
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -302,6 +404,8 @@
     margin-bottom: var(--spacing-lg);
     color: rgba(255, 255, 255, 0.9);
 }
+
+
 
 /* ===== OUR APPROACH ===== */
 .our-approach {
@@ -393,8 +497,173 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+    background-color: var(--secondary);
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-xl) 0;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(30, 21, 41, 0.7) 0%, rgba(63, 34, 69, 0.3) 70%);
+    z-index: 1;
+}
+
+.testimonials .container {
+    position: relative;
+    z-index: 2;
+}
+
+.testimonials .section-header h2 {
+    color: var(--light);
+}
+
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-slide {
+    display: none;
+    animation: fadeEffect 1s;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.testimonial-content {
+    background-color: rgba(30, 21, 41, 0.7);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    border-top: 3px solid var(--primary);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.quote-icon {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.3;
+    text-shadow: 0 0 10px rgba(207, 53, 75, 0.5);
+}
+
+.testimonial-content p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.author-info {
+    margin-left: var(--spacing-sm);
+}
+
+.author-info h4 {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    color: var(--light);
+}
+
+.author-info p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-style: normal;
+}
+
+.testimonial-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--spacing-md);
+}
+
+.prev-testimonial,
+.next-testimonial {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    transition: color var(--transition-fast);
+}
+
+.prev-testimonial:hover,
+.next-testimonial:hover {
+    color: var(--primary);
+}
+
+.testimonial-dots {
+    display: flex;
+    margin: 0 var(--spacing-md);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.dot.active {
+    background-color: var(--primary);
+    box-shadow: 0 0 10px rgba(207, 53, 75, 0.5);
+}
+
 /* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 992px) {
+    .page-hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        order: 2;
+    }
+
+    .hero-icons {
+        order: 1;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .floating-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
     .service-item {
         flex-direction: column;
     }
@@ -433,8 +702,18 @@
 }
 
 @media (max-width: 768px) {
-    .page-hero h1 {
+    .hero-text h1 {
         font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .floating-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
     
     .benefits-grid {
@@ -444,6 +723,15 @@
     .service-features ul {
         grid-template-columns: 1fr;
     }
+
+        .tab-button {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .tab-button i {
+        margin-right: 10px; /* Leggermente ridotto su mobile ma comunque più ampio dell'originale */
+    }
+}
 }
 
 @media (max-width: 576px) {
@@ -452,12 +740,18 @@
         padding: 8rem 0 3rem;
     }
     
-    .page-hero h1 {
+    .hero-text h1 {
         font-size: 2rem;
     }
-    
-    .page-hero p {
-        font-size: 1.1rem;
+
+    .hero-icons {
+        gap: 0.5rem;
+    }
+
+    .floating-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
     }
     
     .approach-steps {
