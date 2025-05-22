@@ -30,12 +30,51 @@
     <!-- Header Component -->
     <div data-component="header" data-param-active-page="progetti"></div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section con Floating Cards -->
     <section class="page-hero">
         <div class="container">
             <div class="page-hero-content">
-                <h1>I nostri progetti</h1>
-                <p>Scopri come abbiamo trasformato sfide complesse in soluzioni di successo</p>
+                <!-- Floating Cards Background -->
+                <div class="floating-cards">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>ERP</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-brain"></i>
+                        <span>AI</span>
+                    </div>
+                    <div class="floating-card card-4">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud</span>
+                    </div>
+                    <div class="floating-card card-5">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </div>
+                    <div class="floating-card card-6">
+                        <i class="fas fa-cogs"></i>
+                        <span>API</span>
+                    </div>
+                    <div class="floating-card card-7">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security</span>
+                    </div>
+                    <div class="floating-card card-8">
+                        <i class="fas fa-database"></i>
+                        <span>Database</span>
+                    </div>
+                </div>
+                
+                <!-- Hero Text Content -->
+                <div class="hero-text">
+                    <h1>I nostri progetti</h1>
+                    <p>Scopri come abbiamo trasformato sfide complesse in soluzioni di successo, creando valore tangibile per i nostri clienti</p>
+                </div>
             </div>
         </div>
     </section>
@@ -149,6 +188,54 @@
                             <h4>App di Food Delivery</h4>
                             <p>Applicazione di consegna pasti per una startup del settore food con sistema di tracciamento in tempo reale.</p>
                             <a href="#food-delivery" class="btn btn-small project-details-btn">Vedi dettagli</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto 7: Sistema IoT -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-tags">
+                            <span>IoT</span>
+                            <span>Real-time</span>
+                            <span>Dashboard</span>
+                        </div>
+                        <div class="project-overlay">
+                            <h4>Piattaforma IoT Industriale</h4>
+                            <p>Sistema per il monitoraggio e controllo di dispositivi IoT in ambiente industriale con dashboard in tempo reale.</p>
+                            <a href="#iot-platform" class="btn btn-small project-details-btn">Vedi dettagli</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto 8: Chatbot AI -->
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <div class="project-tags">
+                            <span>AI</span>
+                            <span>NLP</span>
+                            <span>Chatbot</span>
+                        </div>
+                        <div class="project-overlay">
+                            <h4>Assistente Virtuale Intelligente</h4>
+                            <p>Chatbot avanzato con intelligenza artificiale per servizio clienti automatizzato con comprensione del linguaggio naturale.</p>
+                            <a href="#ai-chatbot" class="btn btn-small project-details-btn">Vedi dettagli</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto 9: Blockchain Platform -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-tags">
+                            <span>Blockchain</span>
+                            <span>Smart Contracts</span>
+                            <span>Security</span>
+                        </div>
+                        <div class="project-overlay">
+                            <h4>Piattaforma Blockchain</h4>
+                            <p>Sistema di tracciabilità basato su blockchain per garantire autenticità e trasparenza nella supply chain.</p>
+                            <a href="#blockchain-platform" class="btn btn-small project-details-btn">Vedi dettagli</a>
                         </div>
                     </div>
                 </div>
@@ -284,7 +371,6 @@
         
         <!-- AI Predictive -->
         <div id="ai-predictive" class="project-detail">
-            <!-- Contenuto dettagliato del progetto AI -->
             <div class="project-header">
                 <h2>AI per Analisi Predittiva</h2>
                 <div class="project-meta">
@@ -339,8 +425,294 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Altri progetti dettagliati possono essere aggiunti qui -->
+
+        <!-- Cloud Migration -->
+        <div id="cloud-migration" class="project-detail">
+            <div class="project-header">
+                <h2>Migrazione Cloud Infrastructure</h2>
+                <div class="project-meta">
+                    <span class="client"><i class="fas fa-building"></i> Cliente: FinanceSecure</span>
+                    <span class="duration"><i class="fas fa-calendar-alt"></i> Durata: 10 mesi</span>
+                    <span class="tech"><i class="fas fa-code"></i> Tecnologie: AWS, Kubernetes, Docker, Terraform</span>
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <h3>La sfida</h3>
+                <p>FinanceSecure, istituto finanziario con infrastruttura legacy on-premise, necessitava di una migrazione completa al cloud per migliorare scalabilità, ridurre costi e aumentare la sicurezza, garantendo zero downtime durante la transizione.</p>
+                
+                <h3>La soluzione</h3>
+                <ul class="feature-list">
+                    <li>Analisi completa dell'infrastruttura esistente</li>
+                    <li>Progettazione architettura cloud-native su AWS</li>
+                    <li>Migrazione graduale con strategia blue-green deployment</li>
+                    <li>Implementazione CI/CD con DevOps best practices</li>
+                    <li>Monitoraggio e logging centralizzato</li>
+                    <li>Disaster recovery automatico</li>
+                </ul>
+                
+                <div class="results-section">
+                    <h3>Risultati</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-coins"></i></div>
+                            <div class="result-value">-35%</div>
+                            <div class="result-label">Costi infrastruttura</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="result-value">+60%</div>
+                            <div class="result-label">Performance</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-clock"></i></div>
+                            <div class="result-value">0</div>
+                            <div class="result-label">Downtime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- B2B Portal -->
+        <div id="b2b-portal" class="project-detail">
+            <div class="project-header">
+                <h2>Portale Clienti B2B</h2>
+                <div class="project-meta">
+                    <span class="client"><i class="fas fa-building"></i> Cliente: IndustrialSupply</span>
+                    <span class="duration"><i class="fas fa-calendar-alt"></i> Durata: 5 mesi</span>
+                    <span class="tech"><i class="fas fa-code"></i> Tecnologie: Vue.js, Laravel, MySQL</span>
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <h3>La sfida</h3>
+                <p>IndustrialSupply aveva bisogno di digitalizzare la gestione clienti B2B con un portale self-service per ordini, fatturazione e supporto tecnico, sostituendo processi manuali inefficienti.</p>
+                
+                <h3>La soluzione</h3>
+                <ul class="feature-list">
+                    <li>Portale self-service per gestione ordini</li>
+                    <li>Dashboard personalizzati per ogni cliente</li>
+                    <li>Sistema di ticketing integrato</li>
+                    <li>Catalogo prodotti dinamico con prezzi personalizzati</li>
+                    <li>Reportistica avanzata e analytics</li>
+                    <li>Integrazione con sistemi ERP esistenti</li>
+                </ul>
+                
+                <div class="results-section">
+                    <h3>Risultati</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-users"></i></div>
+                            <div class="result-value">+80%</div>
+                            <div class="result-label">Adozione clienti</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <div class="result-value">+25%</div>
+                            <div class="result-label">Ordini online</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-headset"></i></div>
+                            <div class="result-value">-50%</div>
+                            <div class="result-label">Ticket supporto</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Delivery -->
+        <div id="food-delivery" class="project-detail">
+            <div class="project-header">
+                <h2>App di Food Delivery</h2>
+                <div class="project-meta">
+                    <span class="client"><i class="fas fa-building"></i> Cliente: QuickEats</span>
+                    <span class="duration"><i class="fas fa-calendar-alt"></i> Durata: 7 mesi</span>
+                    <span class="tech"><i class="fas fa-code"></i> Tecnologie: Flutter, Node.js, PostgreSQL, Redis</span>
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <h3>La sfida</h3>
+                <p>QuickEats, startup nel settore food delivery, necessitava di un'app completa per gestire ordini, pagamenti, tracking in tempo reale e coordinamento tra clienti, ristoranti e rider.</p>
+                
+                <h3>La soluzione</h3>
+                <ul class="feature-list">
+                    <li>App tri-platform (cliente, ristorante, rider)</li>
+                    <li>Tracking GPS in tempo reale</li>
+                    <li>Sistema di pagamento integrato</li>
+                    <li>Algoritmo di routing ottimizzato</li>
+                    <li>Sistema di rating e recensioni</li>
+                    <li>Dashboard analytics per business intelligence</li>
+                </ul>
+                
+                <div class="results-section">
+                    <h3>Risultati</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-download"></i></div>
+                            <div class="result-value">50k+</div>
+                            <div class="result-label">Download</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-clock"></i></div>
+                            <div class="result-value">-20%</div>
+                            <div class="result-label">Tempi consegna</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-star"></i></div>
+                            <div class="result-value">4.8/5</div>
+                            <div class="result-label">Rating app</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IoT Platform -->
+        <div id="iot-platform" class="project-detail">
+            <div class="project-header">
+                <h2>Piattaforma IoT Industriale</h2>
+                <div class="project-meta">
+                    <span class="client"><i class="fas fa-building"></i> Cliente: SmartFactory</span>
+                    <span class="duration"><i class="fas fa-calendar-alt"></i> Durata: 12 mesi</span>
+                    <span class="tech"><i class="fas fa-code"></i> Tecnologie: React, Node.js, InfluxDB, MQTT</span>
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <h3>La sfida</h3>
+                <p>SmartFactory voleva implementare una soluzione IoT per monitorare macchinari industriali, prevedere manutenzioni e ottimizzare la produzione attraverso l'analisi dei dati in tempo reale.</p>
+                
+                <h3>La soluzione</h3>
+                <ul class="feature-list">
+                    <li>Rete di sensori IoT personalizzati</li>
+                    <li>Dashboard real-time per monitoraggio</li>
+                    <li>Algoritmi di manutenzione predittiva</li>
+                    <li>Sistema di alert automatici</li>
+                    <li>API per integrazione con sistemi esistenti</li>
+                    <li>Mobile app per operatori in campo</li>
+                </ul>
+                
+                <div class="results-section">
+                    <h3>Risultati</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-tools"></i></div>
+                            <div class="result-value">-45%</div>
+                            <div class="result-label">Downtime macchinari</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="result-value">+28%</div>
+                            <div class="result-label">Efficienza produttiva</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-wrench"></i></div>
+                            <div class="result-value">-60%</div>
+                            <div class="result-label">Costi manutenzione</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Chatbot -->
+        <div id="ai-chatbot" class="project-detail">
+            <div class="project-header">
+                <h2>Assistente Virtuale Intelligente</h2>
+                <div class="project-meta">
+                    <span class="client"><i class="fas fa-building"></i> Cliente: CustomerFirst</span>
+                    <span class="duration"><i class="fas fa-calendar-alt"></i> Durata: 6 mesi</span>
+                    <span class="tech"><i class="fas fa-code"></i> Tecnologie: Python, NLP, TensorFlow, Dialogflow</span>
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <h3>La sfida</h3>
+                <p>CustomerFirst voleva automatizzare il servizio clienti con un chatbot intelligente capace di gestire richieste complesse, integrarsi con sistemi CRM e fornire supporto 24/7.</p>
+                
+                <h3>La soluzione</h3>
+                <ul class="feature-list">
+                    <li>Chatbot multi-lingua con NLP avanzato</li>
+                    <li>Integrazione con knowledge base aziendale</li>
+                    <li>Escalation automatica a operatori umani</li>
+                    <li>Analytics conversazionali</li>
+                    <li>Apprendimento continuo dai feedback</li>
+                    <li>Deploy multi-canale (web, WhatsApp, Telegram)</li>
+                </ul>
+                
+                <div class="results-section">
+                    <h3>Risultati</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-robot"></i></div>
+                            <div class="result-value">75%</div>
+                            <div class="result-label">Richieste automatizzate</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-clock"></i></div>
+                            <div class="result-value">-80%</div>
+                            <div class="result-label">Tempo risposta</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-smile"></i></div>
+                            <div class="result-value">92%</div>
+                            <div class="result-label">Soddisfazione clienti</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blockchain Platform -->
+        <div id="blockchain-platform" class="project-detail">
+            <div class="project-header">
+                <h2>Piattaforma Blockchain</h2>
+                <div class="project-meta">
+                    <span class="client"><i class="fas fa-building"></i> Cliente: TraceChain</span>
+                    <span class="duration"><i class="fas fa-calendar-alt"></i> Durata: 14 mesi</span>
+                    <span class="tech"><i class="fas fa-code"></i> Tecnologie: Ethereum, Solidity, Web3.js, IPFS</span>
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <h3>La sfida</h3>
+                <p>TraceChain necessitava di una piattaforma blockchain per garantire tracciabilità e autenticità nella supply chain, creando un registro immutabile delle transazioni e certificazioni.</p>
+                
+                <h3>La soluzione</h3>
+                <ul class="feature-list">
+                    <li>Smart contracts per automazione processi</li>
+                    <li>Sistema di tracciabilità end-to-end</li>
+                    <li>Dashboard per visualizzazione supply chain</li>
+                    <li>Mobile app per verifiche QR code</li>
+                    <li>API per integrazione partner esterni</li>
+                    <li>Sistema di certificazioni digitali</li>
+                </ul>
+                
+                <div class="results-section">
+                    <h3>Risultati</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-shield-check"></i></div>
+                            <div class="result-value">100%</div>
+                            <div class="result-label">Tracciabilità prodotti</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-users"></i></div>
+                            <div class="result-value">+40%</div>
+                            <div class="result-label">Fiducia consumatori</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon"><i class="fas fa-link"></i></div>
+                            <div class="result-value">250+</div>
+                            <div class="result-label">Partner integrati</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- CTA Component -->
@@ -359,17 +731,20 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script>
-        // Script per il filtro dei progetti
+        // Script per il filtro dei progetti e floating cards
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize floating cards animation
+            initFloatingCards();
+            
+            // Project filtering
             const filterButtons = document.querySelectorAll('.filter-btn');
             const projectCards = document.querySelectorAll('.project-card');
             
-            // Filtro progetti
             filterButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    // Rimuovi classe active da tutti i bottoni
+                    // Remove active class from all buttons
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Aggiungi classe active al bottone cliccato
+                    // Add active class to clicked button
                     this.classList.add('active');
                     
                     const filter = this.getAttribute('data-filter');
@@ -377,21 +752,29 @@
                     projectCards.forEach(card => {
                         if (filter === 'all' || card.getAttribute('data-category') === filter) {
                             card.style.display = 'block';
+                            // Add animation
+                            setTimeout(() => {
+                                card.style.transform = 'translateY(0)';
+                                card.style.opacity = '1';
+                            }, 100);
                         } else {
-                            card.style.display = 'none';
+                            card.style.transform = 'translateY(20px)';
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
                         }
                     });
                 });
             });
             
-            // Modal per i dettagli del progetto
+            // Modal for project details
             const modal = document.getElementById('project-modal');
             const modalBody = modal.querySelector('.modal-body');
             const closeModal = modal.querySelector('.close-modal');
             const detailsButtons = document.querySelectorAll('.project-details-btn');
-            const projectDetails = document.querySelectorAll('.project-detail');
             
-            // Apri modal quando clicchi sul pulsante dettagli
+            // Open modal when clicking details button
             detailsButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -401,9 +784,9 @@
                     if (targetDetail) {
                         modalBody.innerHTML = targetDetail.innerHTML;
                         modal.style.display = 'flex';
-                        document.body.style.overflow = 'hidden'; // Blocca lo scroll della pagina
+                        document.body.style.overflow = 'hidden';
                         
-                        // Aggiungi animazioni
+                        // Add animations
                         setTimeout(() => {
                             modal.classList.add('visible');
                             setTimeout(() => {
@@ -414,42 +797,72 @@
                 });
             });
             
-            // Chiudi modal
+            // Close modal
             closeModal.addEventListener('click', function() {
                 modal.classList.remove('modal-visible');
                 setTimeout(() => {
                     modal.classList.remove('visible');
                     setTimeout(() => {
                         modal.style.display = 'none';
-                        document.body.style.overflow = 'auto'; // Ripristina lo scroll
+                        document.body.style.overflow = 'auto';
                     }, 300);
                 }, 200);
             });
             
-            // Chiudi modal se clicchi fuori dal contenuto
+            // Close modal when clicking outside
             window.addEventListener('click', function(e) {
                 if (e.target === modal) {
                     closeModal.click();
                 }
             });
-            
-            // Assicura che i risultati negli elementi del progetto abbiano animazioni di entrata
-            document.addEventListener('click', function(e) {
-                if (e.target.closest('.project-details-btn')) {
-                    setTimeout(() => {
-                        const resultItems = document.querySelectorAll('.result-item');
-                        resultItems.forEach((item, index) => {
-                            item.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-                            item.style.transitionDelay = (0.1 * index) + 's';
-                            setTimeout(() => {
-                                item.style.transform = 'translateY(0)';
-                                item.style.opacity = '1';
-                            }, 100);
-                        });
-                    }, 500);
-                }
-            });
         });
+
+        // Floating Cards Animation
+        function initFloatingCards() {
+            const cards = document.querySelectorAll('.floating-card');
+            
+            // Set random initial positions and start animations
+            cards.forEach((card, index) => {
+                // Set initial random position
+                const x = Math.random() * 80 + 10; // 10% to 90%
+                const y = Math.random() * 80 + 10; // 10% to 90%
+                
+                card.style.left = x + '%';
+                card.style.top = y + '%';
+                
+                // Start animation with delay
+                card.style.animationDelay = (index * 0.5) + 's';
+                
+                // Add hover effect
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1) translateY(-10px)';
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) translateY(0)';
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // Continuous floating movement
+            setInterval(() => {
+                cards.forEach(card => {
+                    if (!card.matches(':hover')) {
+                        const currentLeft = parseFloat(card.style.left);
+                        const currentTop = parseFloat(card.style.top);
+                        
+                        // Small random movement
+                        const newLeft = Math.max(5, Math.min(95, currentLeft + (Math.random() - 0.5) * 5));
+                        const newTop = Math.max(5, Math.min(95, currentTop + (Math.random() - 0.5) * 5));
+                        
+                        card.style.transition = 'left 3s ease, top 3s ease';
+                        card.style.left = newLeft + '%';
+                        card.style.top = newTop + '%';
+                    }
+                });
+            }, 3000);
+        }
     </script>
 </body>
 </html>

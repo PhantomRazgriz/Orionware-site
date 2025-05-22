@@ -708,7 +708,7 @@
         gap: 1rem;
         margin-top: 1.5rem;
     }
-}
+
 
     .hero-text {
         order: 2;
@@ -796,7 +796,7 @@
     .tab-button i {
         margin-right: 12px; /* Leggermente ridotto su mobile ma comunque più ampio dell'originale */
     }
-}
+
    .service-icon {
         width: 60px;
         height: 60px;
@@ -842,7 +842,7 @@
         height: 30px;
         font-size: 1rem;
     }
-}
+
 
  .service-icon {
         width: 50px;
