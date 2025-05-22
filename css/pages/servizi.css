@@ -4,8 +4,10 @@
     background-color: var(--dark);
     display: flex;
     align-items: center;
+    justify-content: center; /* Aggiunto per centrare orizzontalmente */
     padding: 10rem 0 5rem;
     overflow: hidden;
+    text-align: center; /* Assicura che tutto il testo sia centrato */
 }
 
 .page-hero::before {
@@ -25,17 +27,21 @@
     position: relative;
     z-index: 2;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Cambiato a colonna per allineare tutto verticalmente */
+    justify-content: center;
     align-items: center;
-    gap: 3rem;
     width: 100%;
-    max-width: 800px;
+    max-width: 100%; /* Usa l'intera larghezza disponibile */
     margin: 0 auto;
+    text-align: center;
 }
 
 .hero-text {
-    flex: 1;
-    text-align: left;
+    flex: 0 0 auto; /* Non espandere, usa solo lo spazio necessario */
+    text-align: center;
+    max-width: 900px; /* Stessa larghezza della sezione sotto */
+    width: 100%;
+    margin: 0 auto;
 }
 
 .hero-text h1 {
@@ -53,10 +59,10 @@
 
 .hero-icons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Cambiato a riga per allineare orizzontalmente */
     gap: 1.5rem;
-    align-items: center;
-    min-width: 120px;
+    justify-content: center;
+    margin-top: 2rem; /* Spazio tra testo e icone */
 }
 
 .floating-icon {
@@ -132,6 +138,11 @@
 }
 
 /* ===== SERVICES OVERVIEW ===== */
+.services-overview .container,
+.service-details .container {
+    max-width: 900px; /* Stessa larghezza della hero section */
+    margin: 0 auto;
+}
 
 .services-overview {
     background-color: var(--dark);
@@ -213,6 +224,13 @@
     padding: var(--spacing-lg);
 }
 
+.service-content h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    color: var(--light);
+    font-size: 2rem;
+}
 .service-image {
     flex: 0 0 40%;
     background-color: rgba(30, 21, 41, 0.4);
@@ -221,12 +239,46 @@
 }
 
 .tab-button i {
-    margin-right: 12px; /* Aumentato da 8px per dare più respiro tra icona e testo */
+    font-size: 1.2rem;
+    margin-right: 20px; /* Spazio aumentato tra icona e testo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px; /* Dimensione fissa per l'icona */
+    height: 24px; /* Altezza fissa */
+    text-align: center;
 }
 .tab-button {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 8px; /* Aggiunge uno spazio esplicito tra gli elementi */
+    justify-content: flex-start;
+}
+
+.tab-button::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-image: var(--gradient-primary);
+    transition: width var(--transition-normal);
+    border-radius: var(--radius-full);
+}
+
+.tab-button span {
+    font-weight: 500;
+    line-height: 1.2; /* Migliora l'allineamento verticale */
+    display: block; /* Previene problemi di allineamento */
 }
 /* Placeholder backgrounds for service images */
 #sviluppo-software .service-image {
@@ -265,10 +317,12 @@
     height: 70px;
     background-image: var(--gradient-primary);
     border-radius: var(--radius-full);
-    margin-bottom: var(--spacing-md);
     color: var(--light);
     font-size: 1.5rem;
     box-shadow: 0 0 20px rgba(207, 53, 75, 0.3);
+    margin-right: 25px; /* Aggiungi spazio tra l'icona e il titolo */
+    margin-bottom: 0; /* Rimuovi il margine inferiore quando l'icona è inline */
+    flex-shrink: 0; /* Impedisce all'icona di restringersi */
 }
 
 .service-item h2 {
@@ -299,14 +353,16 @@
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--spacing-sm);
+    gap: 10px; /* Aggiunto un gap uniforme */
 }
 
-.service-features li {
-    display: flex;
+.service-features li i {
+    margin-right: 15px; /* Aumentato per dare più spazio tra icona e testo */
+    min-width: 20px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: var(--spacing-xs);
 }
 
 .service-features i {
@@ -316,7 +372,7 @@
 }
 .service-features li i {
     margin-right: var(--spacing-sm); /* Usa la variabile di spaziatura per consistenza */
-    min-width: 16px; /* Assicura una larghezza minima dell'icona */
+    min-width: 20px; /* Aumentato da 16px per dare più spazio */
     text-align: center; /* Centra l'icona nel suo spazio */
 }
 .benefits-grid {
@@ -639,11 +695,20 @@
 
 /* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 992px) {
-    .page-hero-content {
+     .page-hero-content {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
     }
+
+        .hero-icons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+}
 
     .hero-text {
         order: 2;
@@ -724,16 +789,25 @@
         grid-template-columns: 1fr;
     }
 
-        .tab-button {
+    .tab-button {
         padding: var(--spacing-xs) var(--spacing-sm);
     }
     
     .tab-button i {
-        margin-right: 10px; /* Leggermente ridotto su mobile ma comunque più ampio dell'originale */
+        margin-right: 12px; /* Leggermente ridotto su mobile ma comunque più ampio dell'originale */
     }
 }
+   .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.3rem;
+        margin-right: 20px; /* Spazio leggermente ridotto su mobile */
+    }
+    
+    .service-content h2 {
+        font-size: 1.7rem;
+    }
 }
-
 @media (max-width: 576px) {
     .page-hero {
         min-height: 30vh;
@@ -767,5 +841,17 @@
         width: 30px;
         height: 30px;
         font-size: 1rem;
+    }
+}
+
+ .service-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+        margin-right: 15px; /* Ulteriormente ridotto per schermi molto piccoli */
+    }
+    
+    .service-content h2 {
+        font-size: 1.5rem;
     }
 }
