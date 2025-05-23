@@ -9,8 +9,8 @@
     background-color: var(--dark);
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: center; /* Centra orizzontalmente */
+    text-align: center; /* Centra il testo */
     padding: 10rem 0 5rem;
     overflow: hidden;
 }
@@ -32,20 +32,31 @@
     position: relative;
     z-index: 2;
     max-width: 800px;
+    width: 100%; /* Assicura che occupi la larghezza disponibile */
+    margin: 0 auto; /* Centra il contenuto */
+    text-align: center; /* Centra tutto il testo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .page-hero h1 {
     font-size: 3.5rem;
     margin-bottom: var(--spacing-md);
     text-shadow: 0 0 20px rgba(30, 21, 41, 0.8);
+    text-align: center; /* Assicura che il titolo sia centrato */
 }
 
 .page-hero p {
     font-size: 1.3rem;
     margin-bottom: 0;
     color: rgba(255, 255, 255, 0.9);
+    text-align: center; /* Assicura che il paragrafo sia centrato */
+    max-width: 700px; /* Limita la larghezza per una migliore leggibilità */
+    margin-left: auto;
+    margin-right: auto;
 }
-
 /* ===== CONTACT FORM SECTION ===== */
 .contact-form-section {
     background-color: var(--secondary);
@@ -730,6 +741,11 @@
         font-size: 2.5rem;
     }
     
+    .page-hero p {
+        font-size: 1.1rem;
+        max-width: 90%; /* Su mobile usa più larghezza disponibile */
+    }
+    
     .form-group {
         flex: 0 0 100%;
     }
@@ -765,7 +781,8 @@
     }
     
     .page-hero p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        max-width: 95%;
     }
     
     .map-container {
