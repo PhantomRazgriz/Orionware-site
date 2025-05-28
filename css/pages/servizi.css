@@ -140,8 +140,10 @@
 /* ===== SERVICES OVERVIEW ===== */
 .services-overview .container,
 .service-details .container {
-    max-width: 900px; /* Stessa larghezza della hero section */
-    margin: 0 auto;
+    max-width: 95%; /* Usa il 95% della larghezza dello schermo */
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .services-overview {
@@ -200,6 +202,7 @@
 
 .service-item {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     margin-bottom: var(--spacing-xl);
     background-color: rgba(30, 21, 41, 0.7);
@@ -209,6 +212,7 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%; /* Assicura che prenda tutta la larghezza disponibile */
 }
 
 .service-item:last-child {
@@ -220,7 +224,7 @@
 }
 
 .service-content {
-    flex: 0 0 60%;
+    flex: 1; /* Permette al contenuto di espandersi */
     padding: var(--spacing-lg);
 }
 
@@ -232,10 +236,7 @@
     font-size: 2rem;
 }
 .service-image {
-    flex: 0 0 40%;
-    background-color: rgba(30, 21, 41, 0.4);
-    position: relative;
-    overflow: hidden;
+    flex: 0 0 35%; /* Dimensione relativa per l'immagine */
 }
 
 .tab-button i {
