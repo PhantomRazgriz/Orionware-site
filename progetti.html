@@ -817,52 +817,55 @@
             });
         });
 
-        // Floating Cards Animation
-        function initFloatingCards() {
-            const cards = document.querySelectorAll('.floating-card');
-            
-            // Set random initial positions and start animations
-            cards.forEach((card, index) => {
-                // Set initial random position
-                const x = Math.random() * 80 + 10; // 10% to 90%
-                const y = Math.random() * 80 + 10; // 10% to 90%
+// Floating Cards Animation - Posizionamento Perimetrale
+function initFloatingCards() {
+    const cards = document.querySelectorAll('.floating-card');
+    
+    // Definisci le zone permesse per ogni card (perimetro)
+    const cardZones = {
+        'card-1': { minX: 2, maxX: 25, minY: 5, maxY: 35 },     // Sinistra alto
+        'card-2': { minX: 2, maxX: 25, minY: 35, maxY: 55 },    // Sinistra centro
+        'card-3': { minX: 2, maxX: 25, minY: 65, maxY: 90 },    // Sinistra basso
+        'card-4': { minX: 75, maxX: 98, minY: 5, maxY: 35 },    // Destra alto
+        'card-5': { minX: 75, maxX: 98, minY: 35, maxY: 55 },   // Destra centro
+        'card-6': { minX: 75, maxX: 98, minY: 65, maxY: 90 },   // Destra basso
+        'card-7': { minX: 30, maxX: 70, minY: 2, maxY: 15 },    // Sopra
+        'card-8': { minX: 30, maxX: 70, minY: 85, maxY: 98 }    // Sotto
+    };
+    
+    // Movimento controllato ogni 4 secondi
+    setInterval(() => {
+        cards.forEach(card => {
+            if (!card.matches(':hover')) {
+                const cardClass = Array.from(card.classList).find(cls => cls.startsWith('card-'));
+                const zone = cardZones[cardClass];
                 
-                card.style.left = x + '%';
-                card.style.top = y + '%';
-                
-                // Start animation with delay
-                card.style.animationDelay = (index * 0.5) + 's';
-                
-                // Add hover effect
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.1) translateY(-10px)';
-                    this.style.zIndex = '10';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1) translateY(0)';
-                    this.style.zIndex = '1';
-                });
-            });
-            
-            // Continuous floating movement
-            setInterval(() => {
-                cards.forEach(card => {
-                    if (!card.matches(':hover')) {
-                        const currentLeft = parseFloat(card.style.left);
-                        const currentTop = parseFloat(card.style.top);
-                        
-                        // Small random movement
-                        const newLeft = Math.max(5, Math.min(95, currentLeft + (Math.random() - 0.5) * 5));
-                        const newTop = Math.max(5, Math.min(95, currentTop + (Math.random() - 0.5) * 5));
-                        
-                        card.style.transition = 'left 3s ease, top 3s ease';
-                        card.style.left = newLeft + '%';
-                        card.style.top = newTop + '%';
-                    }
-                });
-            }, 3000);
-        }
+                if (zone) {
+                    // Calcola nuova posizione all'interno della zona permessa
+                    const newX = Math.random() * (zone.maxX - zone.minX) + zone.minX;
+                    const newY = Math.random() * (zone.maxY - zone.minY) + zone.minY;
+                    
+                    card.style.transition = 'all 3s ease-in-out';
+                    card.style.left = newX + '%';
+                    card.style.top = newY + '%';
+                }
+            }
+        });
+    }, 4000);
+    
+    // Gestione hover migliorata
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.3s ease';
+            this.style.zIndex = '5';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transition = 'all 3s ease-in-out';
+            this.style.zIndex = '1';
+        });
+    });
+}
     </script>
 </body>
 </html>
