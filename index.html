@@ -1,320 +1,349 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orionware - Soluzioni Software Innovative</title>
-    
-    <!-- CSS Principale -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/coffee-counter.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Meta Description -->
-    <meta name="description" content="Orionware - Azienda leader nello sviluppo software e soluzioni di intelligenza artificiale con 6 anni di esperienza nel settore IT.">
-    
-    <!-- Component Loader -->
-    <script src="js/utils/component-loader.js"></script>
-    <!-- Coffee counter -->
-    <script src="js/coffee-counter.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orionware - Soluzioni Software Innovative</title>
 
+  <!-- CSS Principale -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/coffee-counter.css" />
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Meta Description -->
+  <meta name="description"
+    content="Orionware - Azienda leader nello sviluppo software e soluzioni di intelligenza artificiale con 6 anni di esperienza nel settore IT." />
+
+  <!-- Component Loader -->
+  <script src="js/utils/component-loader.js"></script>
+  <!-- Coffee counter -->
+  <script src="js/coffee-counter.js" defer></script>
 </head>
+
 <body>
-    <!-- Loader Component -->
-    <div data-component="loader"></div>
-    
-    <!-- Header Component -->
-    <div data-component="header" data-param-active-page="home"></div>
+  <!-- Loader Component -->
+  <div data-component="loader"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Trasformiamo le idee in soluzioni digitali</h1>
-                <p>Dal 2019 accompagniamo le aziende nel loro percorso di innovazione tecnologica con soluzioni software personalizzate e all'avanguardia.</p>
-                <div class="hero-cta">
-                    <a href="contatti.html" class="btn btn-primary">Parliamo del tuo progetto</a>
-                    <a href="servizi.html" class="btn btn-secondary">Scopri i nostri servizi</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="particle-network"></div>
-                <div class="hero-image">
-                    <!-- Elemento grafico che verrà animato con CSS/JS -->
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Header Component -->
+  <div data-component="header" data-param-active-page="home"></div>
 
-    <!-- Modifica il contatore di caffè nella sezione Stats Banner -->
-<section class="stats-banner">
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="container">
-        <div class="stat-item">
-            <span class="stat-number" data-count="20">0</span>
-            <span class="stat-label">Progetti completati</span>
+      <div class="hero-content">
+        <h1>Trasformiamo le idee in soluzioni digitali</h1>
+        <p>
+          Dal 2019 accompagniamo le aziende nel loro percorso di innovazione
+          tecnologica con soluzioni software personalizzate e all'avanguardia.
+        </p>
+        <div class="hero-cta">
+          <a href="contatti.html" class="btn btn-primary">Parliamo del tuo progetto</a>
+          <a href="servizi.html" class="btn btn-secondary">Scopri i nostri servizi</a>
         </div>
-        <div class="stat-item">
-            <span class="stat-number" data-count="100">0</span>
-            <span class="stat-label">% Clienti soddisfatti</span>
+      </div>
+      <div class="hero-visual">
+        <div class="particle-network"></div>
+        <div class="hero-image">
+          <!-- Elemento grafico che verrà animato con CSS/JS -->
         </div>
-        <div class="stat-item coffee-stat-item">
-            <span class="stat-number coffee-counter">3428</span>
-            <span class="stat-label">Caffè bevuti</span>
-        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-    <!-- Services Section -->
-    <!-- NUOVO MARKUP HTML PER LA SEZIONE SERVIZI -->
-<section class="services-section">
+  <!-- Modifica il contatore di caffè nella sezione Stats Banner -->
+  <section class="stats-banner">
+    <div class="container">
+      <div class="stat-item">
+        <span class="stat-number" data-count="20">0</span>
+        <span class="stat-label">Progetti completati</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="100">0</span>
+        <span class="stat-label">% Clienti soddisfatti</span>
+      </div>
+      <div class="stat-item coffee-stat-item">
+        <span class="stat-number coffee-counter">3428</span>
+        <span class="stat-label">Caffè bevuti</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <!-- NUOVO MARKUP HTML PER LA SEZIONE SERVIZI -->
+  <section class="services-section">
     <div class="services-background">
-        <div class="animated-shape shape1"></div>
-        <div class="animated-shape shape2"></div>
-        <div class="animated-shape shape3"></div>
+      <div class="animated-shape shape1"></div>
+      <div class="animated-shape shape2"></div>
+      <div class="animated-shape shape3"></div>
     </div>
-    
-    <div class="container">
-        <div class="services-header">
-            <h2 class="section-title">I nostri servizi</h2>
-            <p class="section-subtitle">Soluzioni tecnologiche personalizzate per il tuo business</p>
-            <div class="title-underline"></div>
-        </div>
-        
-        <div class="services-tabs">
-            <div class="tabs-navigation">
-                <button class="tab-button active" data-service="sviluppo">
-                    <i class="fas fa-code"></i>
-                    <span>Sviluppo Software</span>
-                </button>
-                <button class="tab-button" data-service="mobile">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span>App Mobile</span>
-                </button>
-                <button class="tab-button" data-service="ai">
-                    <i class="fas fa-brain"></i>
-                    <span>Intelligenza Artificiale</span>
-                </button>
-                <button class="tab-button" data-service="cloud">
-                    <i class="fas fa-cloud"></i>
-                    <span>Cloud Solutions</span>
-                </button>
-            </div>
-            
-            <div class="tabs-content">
-                <!-- CONTENUTO TAB SVILUPPO SOFTWARE -->
-                <div class="tab-panel active" id="sviluppo-panel">
-                    <div class="service-content">
-                        <div class="service-description">
-                            <h3>Sviluppo Software Personalizzato</h3>
-                            <p>Creiamo applicazioni software su misura per rispondere esattamente alle esigenze della tua azienda, ottimizzando processi e aumentando l'efficienza operativa.</p>
-                            
-                            <div class="service-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Applicazioni web avanzate</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Sistemi gestionali ERP/CRM</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Dashboard e reportistica</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Integrazione con sistemi esistenti</span>
-                                </div>
-                            </div>
-                            
-                            <a href="servizi.html#sviluppo-software" class="service-link">
-                                Scopri di più
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="service-image">
-                            <div class="image-placeholder">
-                                <div class="tech-icon"><i class="fab fa-react"></i></div>
-                                <div class="tech-icon"><i class="fab fa-js-square"></i></div>
-                                <div class="tech-icon"><i class="fab fa-node-js"></i></div>
-                                <div class="tech-icon"><i class="fab fa-python"></i></div>
-                                <div class="code-lines">
-                                    <span class="code-line"></span>
-                                    <span class="code-line"></span>
-                                    <span class="code-line"></span>
-                                    <span class="code-line"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- CONTENUTO TAB APP MOBILE -->
-                <div class="tab-panel" id="mobile-panel">
-                    <div class="service-content">
-                        <div class="service-description">
-                            <h3>Sviluppo App Mobile</h3>
-                            <p>Portiamo la tua attività sui dispositivi mobili con applicazioni native o cross-platform progettate per offrire un'esperienza utente eccezionale su iOS e Android.</p>
-                            
-                            <div class="service-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>App native e cross-platform</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Integrazione con API esistenti</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>UX/UI design mobile-first</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Funzionalità offline e sincronizzazione</span>
-                                </div>
-                            </div>
-                            
-                            <a href="servizi.html#app-mobile" class="service-link">
-                                Scopri di più
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="service-image">
-                            <div class="image-placeholder">
-                                <div class="phone-mockup">
-                                    <div class="phone-screen"></div>
-                                    <div class="phone-notch"></div>
-                                    <div class="phone-button"></div>
-                                    <div class="phone-elements">
-                                        <span class="element"></span>
-                                        <span class="element"></span>
-                                        <span class="element"></span>
-                                    </div>
-                                </div>
-                                <div class="tech-icon"><i class="fab fa-android"></i></div>
-                                <div class="tech-icon"><i class="fab fa-apple"></i></div>
-                                <div class="tech-icon"><i class="fab fa-react"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- CONTENUTO TAB INTELLIGENZA ARTIFICIALE -->
-                <div class="tab-panel" id="ai-panel">
-                    <div class="service-content">
-                        <div class="service-description">
-                            <h3>Soluzioni di Intelligenza Artificiale</h3>
-                            <p>Implementiamo tecnologie AI avanzate per analizzare dati, automatizzare processi e generare insight preziosi per il tuo business, trasformando le informazioni in valore aziendale.</p>
-                            
-                            <div class="service-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Machine Learning e analisi predittiva</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Natural Language Processing</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Computer Vision</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Sistemi di raccomandazione personalizzati</span>
-                                </div>
-                            </div>
-                            
-                            <a href="ai-solutions.html" class="service-link">
-                                Scopri di più
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="service-image">
-                            <div class="image-placeholder">
-                                <div class="neural-network">
-                                    <div class="network-node n1"></div>
-                                    <div class="network-node n2"></div>
-                                    <div class="network-node n3"></div>
-                                    <div class="network-node n4"></div>
-                                    <div class="network-node n5"></div>
-                                    <div class="network-node n6"></div>
-                                    <div class="network-node n7"></div>
-                                    <div class="network-connection c1"></div>
-                                    <div class="network-connection c2"></div>
-                                    <div class="network-connection c3"></div>
-                                    <div class="network-connection c4"></div>
-                                    <div class="network-connection c5"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- CONTENUTO TAB CLOUD SOLUTIONS -->
-                <div class="tab-panel" id="cloud-panel">
-                    <div class="service-content">
-                        <div class="service-description">
-                            <h3>Cloud Solutions</h3>
-                            <p>Migra e ottimizza la tua infrastruttura IT nel cloud per migliorare l'agilità, la scalabilità e ridurre i costi operativi con soluzioni personalizzate e sicure.</p>
-                            
-                            <div class="service-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Migrazione cloud-native</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Architetture serverless</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>CI/CD e DevOps</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Sicurezza e compliance</span>
-                                </div>
-                            </div>
-                            
-                            <a href="servizi.html#cloud-solutions" class="service-link">
-                                Scopri di più
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="service-image">
-                            <div class="image-placeholder">
-                                <div class="cloud-servers">
-                                    <div class="server-rack"></div>
-                                    <div class="server-rack"></div>
-                                    <div class="cloud-shape"></div>
-                                    <div class="tech-icon"><i class="fab fa-aws"></i></div>
-                                    <div class="tech-icon"><i class="fab fa-google"></i></div>
-                                    <div class="tech-icon"><i class="fab fa-microsoft"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="services-action">
-            <a href="servizi.html" class="btn btn-primary">Tutti i servizi</a>
-        </div>
-    </div>
-</section>
 
-    <!-- Featured Work Section -->
+    <div class="container">
+      <div class="services-header">
+        <h2 class="section-title">I nostri servizi</h2>
+        <p class="section-subtitle">
+          Soluzioni tecnologiche personalizzate per il tuo business
+        </p>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="services-tabs">
+        <div class="tabs-navigation">
+          <button class="tab-button active" data-service="sviluppo">
+            <i class="fas fa-code"></i>
+            <span>Sviluppo Software</span>
+          </button>
+          <button class="tab-button" data-service="mobile">
+            <i class="fas fa-mobile-alt"></i>
+            <span>App Mobile</span>
+          </button>
+          <button class="tab-button" data-service="ai">
+            <i class="fas fa-brain"></i>
+            <span>Intelligenza Artificiale</span>
+          </button>
+          <button class="tab-button" data-service="cloud">
+            <i class="fas fa-cloud"></i>
+            <span>Cloud Solutions</span>
+          </button>
+        </div>
+
+        <div class="tabs-content">
+          <!-- CONTENUTO TAB SVILUPPO SOFTWARE -->
+          <div class="tab-panel active" id="sviluppo-panel">
+            <div class="service-content">
+              <div class="service-description">
+                <h3>Sviluppo Software Personalizzato</h3>
+                <p>
+                  Creiamo applicazioni software su misura per rispondere
+                  esattamente alle esigenze della tua azienda, ottimizzando
+                  processi e aumentando l'efficienza operativa.
+                </p>
+
+                <div class="service-features">
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Applicazioni web avanzate</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Sistemi gestionali ERP/CRM</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Dashboard e reportistica</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Integrazione con sistemi esistenti</span>
+                  </div>
+                </div>
+
+                <a href="servizi.html#sviluppo-software" class="service-link">
+                  Scopri di più
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+              <div class="service-image">
+                <div class="image-placeholder">
+                  <div class="tech-icon"><i class="fab fa-react"></i></div>
+                  <div class="tech-icon">
+                    <i class="fab fa-js-square"></i>
+                  </div>
+                  <div class="tech-icon"><i class="fab fa-node-js"></i></div>
+                  <div class="tech-icon"><i class="fab fa-python"></i></div>
+                  <div class="code-lines">
+                    <span class="code-line"></span>
+                    <span class="code-line"></span>
+                    <span class="code-line"></span>
+                    <span class="code-line"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENUTO TAB APP MOBILE -->
+          <div class="tab-panel" id="mobile-panel">
+            <div class="service-content">
+              <div class="service-description">
+                <h3>Sviluppo App Mobile</h3>
+                <p>
+                  Portiamo la tua attività sui dispositivi mobili con
+                  applicazioni native o cross-platform progettate per offrire
+                  un'esperienza utente eccezionale su iOS e Android.
+                </p>
+
+                <div class="service-features">
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>App native e cross-platform</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Integrazione con API esistenti</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>UX/UI design mobile-first</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Funzionalità offline e sincronizzazione</span>
+                  </div>
+                </div>
+
+                <a href="servizi.html#app-mobile" class="service-link">
+                  Scopri di più
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+              <div class="service-image">
+                <div class="image-placeholder">
+                  <div class="phone-mockup">
+                    <div class="phone-screen"></div>
+                    <div class="phone-notch"></div>
+                    <div class="phone-button"></div>
+                    <div class="phone-elements">
+                      <span class="element"></span>
+                      <span class="element"></span>
+                      <span class="element"></span>
+                    </div>
+                  </div>
+                  <div class="tech-icon"><i class="fab fa-android"></i></div>
+                  <div class="tech-icon"><i class="fab fa-apple"></i></div>
+                  <div class="tech-icon"><i class="fab fa-react"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENUTO TAB INTELLIGENZA ARTIFICIALE -->
+          <div class="tab-panel" id="ai-panel">
+            <div class="service-content">
+              <div class="service-description">
+                <h3>Soluzioni di Intelligenza Artificiale</h3>
+                <p>
+                  Implementiamo tecnologie AI avanzate per analizzare dati,
+                  automatizzare processi e generate insight preziosi per il
+                  tuo business, trasformando le informazioni in valore
+                  aziendale.
+                </p>
+
+                <div class="service-features">
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Machine Learning e analisi predittiva</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Natural Language Processing</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Computer Vision</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Sistemi di raccomandazione personalizzati</span>
+                  </div>
+                </div>
+
+                <a href="ai-solutions.html" class="service-link">
+                  Scopri di più
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+              <div class="service-image">
+                <div class="image-placeholder">
+                  <div class="neural-network">
+                    <div class="network-node n1"></div>
+                    <div class="network-node n2"></div>
+                    <div class="network-node n3"></div>
+                    <div class="network-node n4"></div>
+                    <div class="network-node n5"></div>
+                    <div class="network-node n6"></div>
+                    <div class="network-node n7"></div>
+                    <div class="network-connection c1"></div>
+                    <div class="network-connection c2"></div>
+                    <div class="network-connection c3"></div>
+                    <div class="network-connection c4"></div>
+                    <div class="network-connection c5"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENUTO TAB CLOUD SOLUTIONS -->
+          <div class="tab-panel" id="cloud-panel">
+            <div class="service-content">
+              <div class="service-description">
+                <h3>Cloud Solutions</h3>
+                <p>
+                  Migra e ottimizza la tua infrastruttura IT nel cloud per
+                  migliorare l'agilità, la scalabilità e ridurre i costi
+                  operativi con soluzioni personalizzate e sicure.
+                </p>
+
+                <div class="service-features">
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Migrazione cloud-native</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Architetture serverless</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>CI/CD e DevOps</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Sicurezza e compliance</span>
+                  </div>
+                </div>
+
+                <a href="servizi.html#cloud-solutions" class="service-link">
+                  Scopri di più
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+              <div class="service-image">
+                <div class="image-placeholder">
+                  <div class="cloud-servers">
+                    <div class="server-rack"></div>
+                    <div class="server-rack"></div>
+                    <div class="cloud-shape"></div>
+                    <div class="tech-icon"><i class="fab fa-aws"></i></div>
+                    <div class="tech-icon"><i class="fab fa-google"></i></div>
+                    <div class="tech-icon">
+                      <i class="fab fa-microsoft"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-action">
+        <a href="servizi.html" class="btn btn-primary">Tutti i servizi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Work Section 
     <section class="featured-work">
         <div class="container">
             <div class="section-header">
@@ -370,115 +399,146 @@
             </div>
         </div>
     </section>
+-->
 
-    <!-- AI Spotlight Section -->
-<section class="ai-spotlight">
+  <!-- AI Spotlight Section -->
+  <section class="ai-spotlight">
     <div class="container">
-        <div class="ai-content">
-            <div class="section-header left-aligned">
-                <h2>Soluzioni AI innovative</h2>
-                <p>Tecnologie all'avanguardia per le sfide del futuro</p>
-            </div>
-            <p class="ai-description">
-                Orionware vanta 3 anni di esperienza concreta nello sviluppo di soluzioni basate sull'intelligenza artificiale.
-                Il nostro team di data scientist ed esperti di machine learning crea sistemi di AI personalizzati
-                che trasformano i dati aziendali in valore concreto e misurabili.
-            </p>
-            <p class="ai-description">
-                Attualmente siamo impegnati nel nostro secondo progetto enterprise con una grande azienda, 
-                applicando le più recenti tecnologie di AI per risolvere sfide aziendali complesse.
-            </p>
-            <ul class="ai-features">
-                <li><i class="fas fa-check-circle"></i> Machine Learning per l'analisi predittiva</li>
-                <li><i class="fas fa-check-circle"></i> Natural Language Processing per l'analisi dei dati testuali</li>
-                <li><i class="fas fa-check-circle"></i> Computer Vision per il riconoscimento di immagini e video</li>
-                <li><i class="fas fa-check-circle"></i> Sistemi di raccomandazione personalizzati</li>
-            </ul>
-            <a href="ai-solutions.html" class="btn btn-primary">Scopri le nostre soluzioni AI</a>
+      <div class="ai-content">
+        <div class="section-header left-aligned">
+          <h2>Soluzioni AI innovative</h2>
+          <p>Tecnologie all'avanguardia per le sfide del futuro</p>
         </div>
-        <div class="ai-visual">
-            <div class="ai-network-animation">
-                <!-- Animazione di rete neurale con CSS/JS -->
-            </div>
+        <p class="ai-description">
+          Orionware vanta 3 anni di esperienza concreta nello sviluppo di
+          soluzioni basate sull'intelligenza artificiale. Il nostro team di
+          data scientist ed esperti di machine learning crea sistemi di AI
+          personalizzati che trasformano i dati aziendali in valore concreto e
+          misurabili.
+        </p>
+        <p class="ai-description">
+          Attualmente siamo impegnati nel nostro secondo progetto enterprise
+          con una grande azienda, applicando le più recenti tecnologie di AI
+          per risolvere sfide aziendali complesse.
+        </p>
+        <ul class="ai-features">
+          <li>
+            <i class="fas fa-check-circle"></i> Machine Learning per l'analisi
+            predittiva
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i> Natural Language Processing
+            per l'analisi dei dati testuali
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i> Computer Vision per il
+            riconoscimento di immagini e video
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i> Sistemi di raccomandazione
+            personalizzati
+          </li>
+        </ul>
+        <a href="ai-solutions.html" class="btn btn-primary">Scopri le nostre soluzioni AI</a>
+      </div>
+      <div class="ai-visual">
+        <div class="ai-network-animation">
+          <!-- Animazione di rete neurale con CSS/JS -->
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Cosa dicono i nostri clienti</h2>
-                <p>Le testimonianze di chi ha scelto Orionware</p>
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cosa dicono i nostri clienti</h2>
+        <p>Le testimonianze di chi ha scelto Orionware</p>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>
+              Orionware ha trasformato completamente il nostro sistema
+              gestionale, permettendoci di ottimizzare i processi e aumentare
+              la produttività del 40%. Un partner tecnologico affidabile e
+              sempre disponibile.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Marco Bianchi</h4>
+                <p>CEO, TechIndustry</p>
+              </div>
             </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p>Orionware ha trasformato completamente il nostro sistema gestionale, permettendoci di ottimizzare i processi e aumentare la produttività del 40%. Un partner tecnologico affidabile e sempre disponibile.</p>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Marco Bianchi</h4>
-                                <p>CEO, TechIndustry</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p>Il team di Orionware ha sviluppato un'app mobile che ha rivoluzionato il nostro modo di interagire con i clienti. Professionalità, competenza e rispetto delle tempistiche sono i loro punti di forza.</p>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Laura Rossi</h4>
-                                <p>Marketing Director, RetailPlus</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p>Le soluzioni di intelligenza artificiale implementate da Orionware ci hanno permesso di prevedere le tendenze di mercato con una precisione impressionante, dandoci un vantaggio competitivo significativo.</p>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Giovanni Verdi</h4>
-                                <p>CTO, DataInsight</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-controls">
-                <button class="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
-                <div class="testimonial-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <button class="next-testimonial"><i class="fas fa-chevron-right"></i></button>
-            </div>
+          </div>
         </div>
-    </section>
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>
+              Il team di Orionware ha sviluppato un'app mobile che ha
+              rivoluzionato il nostro modo di interagire con i clienti.
+              Professionalità, competenza e rispetto delle tempistiche sono i
+              loro punti di forza.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Laura Rossi</h4>
+                <p>Marketing Director, RetailPlus</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>
+              Le soluzioni di intelligenza artificiale implement da
+              Orionware ci hanno permesso di prevedere le tendenze di mercato
+              con una precisione impressionante, dandoci un vantaggio
+              competitivo significativo.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Giovanni Verdi</h4>
+                <p>CTO, DataInsight</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-controls">
+        <button class="prev-testimonial">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="testimonial-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="next-testimonial">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
 
-    <!-- CTA Component -->
-    <div data-component="cta" 
-         data-param-title="Pronto a trasformare la tua visione digitale in realtà?" 
-         data-param-description="Contattaci oggi stesso per una consulenza gratuita e scopri come Orionware può aiutarti a raggiungere i tuoi obiettivi tecnologici."
-         data-param-button-text="Contattaci"
-         data-param-phone="+39 0123 456789"></div>
+  <!-- CTA Component -->
+  <div data-component="cta" data-param-title="Pronto a trasformare la tua visione digitale in realtà?"
+    data-param-description="Contattaci oggi stesso per una consulenza gratuita e scopri come Orionware può aiutarti a raggiungere i tuoi obiettivi tecnologici."
+    data-param-button-text="Contattaci" data-param-phone="+39 0123 456789"></div>
 
-    <!-- Footer Component -->
-    <div data-component="footer"></div>
+  <!-- Footer Component -->
+  <div data-component="footer"></div>
 
-    <!-- Back to Top Component -->
-    <div data-component="back-to-top"></div>
+  <!-- Back to Top Component -->
+  <div data-component="back-to-top"></div>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/components/services-tabs.js"></script>
-
-
-
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/components/services-tabs.js"></script>
 </body>
+
 </html>
