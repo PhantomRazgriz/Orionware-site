@@ -1,422 +1,509 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Siamo - Orionware</title>
-    
-    <!-- CSS Principale -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pages/chi-siamo.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Meta Description -->
-    <meta name="description" content="Scopri chi siamo: la storia, i valori e il team di Orionware, azienda leader nello sviluppo software e soluzioni di intelligenza artificiale.">
-    
-    <!-- Component Loader -->
-    <script src="js/utils/component-loader.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi Siamo - Orionware</title>
+
+  <!-- CSS Principale -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages/chi-siamo.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Leaflet CSS and JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Meta Description -->
+  <meta name="description"
+    content="Scopri chi siamo: la storia, i valori e il team di Orionware, azienda leader nello sviluppo software e soluzioni di intelligenza artificiale." />
+
+  <!-- Component Loader -->
+  <script src="js/utils/component-loader.js"></script>
 </head>
+
 <body>
-    <!-- Loader Component -->
-    <div data-component="loader"></div>
-    
-    <!-- Header Component -->
-    <div data-component="header" data-param-active-page="chi-siamo"></div>
+  <!-- Loader Component -->
+  <div data-component="loader"></div>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <h1>Chi Siamo</h1>
-                <p>Conosciamo il team che trasforma le idee in soluzioni digitali innovative</p>
+  <!-- Header Component -->
+  <div data-component="header" data-param-active-page="chi-siamo"></div>
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <h1>Chi Siamo</h1>
+        <p>
+          Conosciamo il team che trasforma le idee in soluzioni digitali
+          innovative
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Intro Section -->
+  <section class="company-intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-content">
+          <div class="section-header left-aligned">
+            <h2>La nostra storia</h2>
+            <div class="section-divider"></div>
+          </div>
+          <p>
+            Orionware nasce nel 2019 dalla visione di un gruppo di
+            professionisti appassionati di tecnologia con l'obiettivo di
+            creare soluzioni software innovative per rispondere alle sfide
+            digitali delle aziende moderne.
+          </p>
+          <p>
+            In soli 6 anni, siamo cresciuti fino a diventare un punto di
+            riferimento nel settore IT italiano, specializzandoci in sviluppo
+            software, applicazioni mobile e soluzioni di intelligenza
+            artificiale.
+          </p>
+          <p>
+            Il nostro percorso è stato caratterizzato da una costante
+            evoluzione tecnologica e dalla volontà di anticipate le tendenze
+            del mercato, mantenendo sempre al centro la soddisfazione del
+            cliente e l'eccellenza tecnica.
+          </p>
+          <div class="company-stats">
+            <div class="stat-box">
+              <div class="stat-value">2019</div>
+              <div class="stat-label">Anno di fondazione</div>
             </div>
+            <div class="stat-box">
+              <div class="stat-value">10</div>
+              <div class="stat-label">Professionisti</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">30+</div>
+              <div class="stat-label">Progetti completati</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">98%</div>
+              <div class="stat-label">Clienti soddisfatti</div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Company Intro Section -->
-    <section class="company-intro">
-        <div class="container">
-            <div class="intro-grid">
-                <div class="intro-content">
-                    <div class="section-header left-aligned">
-                        <h2>La nostra storia</h2>
-                        <div class="section-divider"></div>
-                    </div>
-                    <p>Orionware nasce nel 2019 dalla visione di un gruppo di professionisti appassionati di tecnologia con l'obiettivo di creare soluzioni software innovative per rispondere alle sfide digitali delle aziende moderne.</p>
-                    <p>In soli 6 anni, siamo cresciuti fino a diventare un punto di riferimento nel settore IT italiano, specializzandoci in sviluppo software, applicazioni mobile e soluzioni di intelligenza artificiale.</p>
-                    <p>Il nostro percorso è stato caratterizzato da una costante evoluzione tecnologica e dalla volontà di anticipare le tendenze del mercato, mantenendo sempre al centro la soddisfazione del cliente e l'eccellenza tecnica.</p>
-                    <div class="company-stats">
-                        <div class="stat-box">
-                            <div class="stat-value">2019</div>
-                            <div class="stat-label">Anno di fondazione</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">10</div>
-                            <div class="stat-label">Professionisti</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">30+</div>
-                            <div class="stat-label">Progetti completati</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">98%</div>
-                            <div class="stat-label">Clienti soddisfatti</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="intro-image">
-                    <div class="image-container">
-                        <!-- Spazio per l'immagine, sostituito da un div con sfondo gradient -->
-                        <div class="company-image-placeholder"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="intro-image">
+          <div class="image-container">
+            <!-- Spazio per l'immagine, sostituito da un div con sfondo gradient -->
+            <div class="company-image-placeholder"></div>
+          </div>
         </div>
-    </section>
-    <!-- Values Section -->
-    <section class="our-values">
-        <div class="container">
-            <div class="section-header">
-                <h2>I nostri valori</h2>
-                <p>Ciò che guida ogni nostra azione e decisione</p>
-            </div>
-            
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Innovazione</h3>
-                    <p>Crediamo nell'innovazione continua e nell'esplorazione di nuove tecnologie per mantenere i nostri clienti all'avanguardia nel loro settore.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <h3>Eccellenza</h3>
-                    <p>Perseguiamo l'eccellenza in ogni aspetto del nostro lavoro, dalla qualità del codice all'esperienza utente, fino al servizio clienti.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Collaborazione</h3>
-                    <p>Lavoriamo in stretta collaborazione con i nostri clienti e partner, creando relazioni di fiducia basate sulla trasparenza e il rispetto reciproco.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Agilità</h3>
-                    <p>Adottiamo un approccio agile che ci permette di adattarci rapidamente ai cambiamenti e di fornire soluzioni in tempi ridotti.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>Affidabilità</h3>
-                    <p>Garantiamo la massima affidabilità delle nostre soluzioni, con un'attenzione particolare alla sicurezza e alla protezione dei dati.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Sostenibilità</h3>
-                    <p>Promuoviamo pratiche di sviluppo sostenibili e ci impegniamo a ridurre l'impatto ambientale delle soluzioni tecnologiche che creiamo.</p>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+  <!-- Values Section -->
+  <section class="our-values">
+    <div class="container">
+      <div class="section-header">
+        <h2>I nostri valori</h2>
+        <p>Ciò che guida ogni nostra azione e decisione</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Innovazione</h3>
+          <p>
+            Crediamo nell'innovazione continua e nell'esplorazione di nuove
+            tecnologie per mantenere i nostri clienti all'avanguardia nel loro
+            settore.
+          </p>
         </div>
-    </section>
 
-    <!-- Team Section -->
-    <section class="our-team">
-        <div class="container">
-            <div class="section-header">
-                <h2>Il nostro team</h2>
-                <p>Professionisti appassionati che rendono possibile la trasformazione digitale</p>
-            </div>
-            
-            <div class="team-leadership">
-                <h3 class="team-category-title">Leadership</h3>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <!-- Placeholder per la foto del membro del team -->
-                            <div class="photo-placeholder"></div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Marco Bianchi</h4>
-                            <span class="member-role">CEO & Co-fondatore</span>
-                            <p>Con oltre 15 anni di esperienza nel settore IT, guida la visione strategica di Orionware.</p>
-                            <div class="member-social">
-                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <div class="photo-placeholder"></div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Laura Rossi</h4>
-                            <span class="member-role">CTO & Co-fondatrice</span>
-                            <p>Esperta in architetture software e intelligenza artificiale, sovrintende tutti gli sviluppi tecnologici.</p>
-                            <div class="member-social">
-                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <div class="photo-placeholder"></div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Antonio Verdi</h4>
-                            <span class="member-role">Chief Innovation Officer</span>
-                            <p>Anticipa le tendenze tecnologiche e guida i progetti di R&D aziendali con un focus sull'AI.</p>
-                            <div class="member-social">
-                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="team-departments">
-                <div class="department">
-                    <h3 class="team-category-title">Sviluppo Software</h3>
-                    <div class="team-grid">
-                        <div class="team-member">
-                            <div class="member-photo">
-                                <div class="photo-placeholder"></div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Luca Ferrari</h4>
-                                <span class="member-role">Lead Developer</span>
-                                <div class="member-social">
-                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="team-member">
-                            <div class="member-photo">
-                                <div class="photo-placeholder"></div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Sofia Romano</h4>
-                                <span class="member-role">Frontend Specialist</span>
-                                <div class="member-social">
-                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" aria-label="CodePen"><i class="fab fa-codepen"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="team-member">
-                            <div class="member-photo">
-                                <div class="photo-placeholder"></div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Matteo Conti</h4>
-                                <span class="member-role">Backend Developer</span>
-                                <div class="member-social">
-                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="department">
-                    <h3 class="team-category-title">AI & Data Science</h3>
-                    <div class="team-grid">
-                        <div class="team-member">
-                            <div class="member-photo">
-                                <div class="photo-placeholder"></div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Elena Martini</h4>
-                                <span class="member-role">Lead Data Scientist</span>
-                                <div class="member-social">
-                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="team-member">
-                            <div class="member-photo">
-                                <div class="photo-placeholder"></div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Simone Ricci</h4>
-                                <span class="member-role">ML Engineer</span>
-                                <div class="member-social">
-                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="team-member">
-                            <div class="member-photo">
-                                <div class="photo-placeholder"></div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Chiara Lombardi</h4>
-                                <span class="member-role">AI Researcher</span>
-                                <div class="member-social">
-                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="join-team-banner">
-                <div class="join-content">
-                    <h3>Unisciti al nostro team</h3>
-                    <p>Cerchiamo talenti appassionati di tecnologia e innovazione. Scopri le opportunità di carriera in Orionware.</p>
-                    <a href="#" class="btn btn-primary">Posizioni aperte</a>
-                </div>
-            </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-medal"></i>
+          </div>
+          <h3>Eccellenza</h3>
+          <p>
+            Perseguiamo l'eccellenza in ogni aspetto del nostro lavoro, dalla
+            qualità del codice all'esperienza utente, fino al servizio
+            clienti.
+          </p>
         </div>
-    </section>
 
-    <!-- Office Location Section -->
-    <section class="our-offices">
-        <div class="container">
-            <div class="section-header">
-                <h2>Dove siamo</h2>
-                <p>La nostra sede principale e presenza sul territorio</p>
-            </div>
-            
-            <div class="offices-grid">
-                <div class="office-info">
-                    <div class="office-details">
-                        <h3>Sede Principale - Milano</h3>
-                        <address>
-                            <p><i class="fas fa-map-marker-alt"></i> Via dell'Innovazione, 42 - 20126 Milano</p>
-                            <p><i class="fas fa-phone"></i> +39 0123 456789</p>
-                            <p><i class="fas fa-envelope"></i> info@orionware.it</p>
-                        </address>
-                        <div class="office-hours">
-                            <h4>Orari di apertura:</h4>
-                            <p>Lunedì - Venerdì: 9:00 - 18:00</p>
-                            <p>Sabato - Domenica: Chiuso</p>
-                        </div>
-                        <a href="contatti.html" class="btn btn-outline">Contattaci</a>
-                    </div>
-                </div>
-                <div class="office-map">
-                    <!-- Placeholder per la mappa, in produzione si inserirebbe qui una Google Map o simile -->
-                    <div class="map-container">
-                        <div class="map-placeholder">
-                            <i class="fas fa-map-marked-alt"></i>
-                            <p>Mappa interattiva</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Collaborazione</h3>
+          <p>
+            Lavoriamo in stretta collaborazione con i nostri clienti e
+            partner, creando relazioni di fiducia basate sulla trasparenza e
+            il rispetto reciproco.
+          </p>
         </div>
-    </section>
 
-    <!-- Partners Section -->
-    <section class="our-partners">
-        <div class="container">
-            <div class="section-header">
-                <h2>I nostri partner</h2>
-                <p>Collaboriamo con i migliori per offrire soluzioni all'avanguardia</p>
-            </div>
-            
-            <div class="partners-grid">
-                <div class="partner-item">
-                    <div class="partner-logo">
-                        <div class="logo-placeholder">AWS</div>
-                    </div>
-                    <h3>Amazon Web Services</h3>
-                    <p>Partner certificato per soluzioni cloud</p>
-                </div>
-                
-                <div class="partner-item">
-                    <div class="partner-logo">
-                        <div class="logo-placeholder">MSFT</div>
-                    </div>
-                    <h3>Microsoft</h3>
-                    <p>Gold Partner per soluzioni di business intelligence</p>
-                </div>
-                
-                <div class="partner-item">
-                    <div class="partner-logo">
-                        <div class="logo-placeholder">GCP</div>
-                    </div>
-                    <h3>Google Cloud</h3>
-                    <p>Partner per soluzioni di machine learning</p>
-                </div>
-                
-                <div class="partner-item">
-                    <div class="partner-logo">
-                        <div class="logo-placeholder">IBM</div>
-                    </div>
-                    <h3>IBM</h3>
-                    <p>Partner tecnologico per soluzioni cognitive</p>
-                </div>
-                
-                <div class="partner-item">
-                    <div class="partner-logo">
-                        <div class="logo-placeholder">NVIDIA</div>
-                    </div>
-                    <h3>NVIDIA</h3>
-                    <p>Partner per accelerazione GPU in AI</p>
-                </div>
-                
-                <div class="partner-item">
-                    <div class="partner-logo">
-                        <div class="logo-placeholder">SAP</div>
-                    </div>
-                    <h3>SAP</h3>
-                    <p>Partner per integrazioni enterprise</p>
-                </div>
-            </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Agilità</h3>
+          <p>
+            Adottiamo un approccio agile che ci permette di adattarci
+            rapidamente ai cambiamenti e di fornire soluzioni in tempi
+            ridotti.
+          </p>
         </div>
-    </section>
 
-    <!-- CTA Component -->
-    <div data-component="cta" 
-         data-param-title="Pronto a collaborare con il nostro team?" 
-         data-param-description="Contattaci oggi stesso per discutere delle tue esigenze tecnologiche e scoprire come possiamo aiutarti a raggiungere i tuoi obiettivi."
-         data-param-button-text="Parliamo del tuo progetto"
-         data-param-phone="+39 0123 456789"></div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3>Affidabilità</h3>
+          <p>
+            Garantiamo la massima affidabilità delle nostre soluzioni, con
+            un'attenzione particolare alla sicurezza e alla protezione dei
+            dati.
+          </p>
+        </div>
 
-    <!-- Footer Component -->
-    <div data-component="footer"></div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <h3>Sostenibilità</h3>
+          <p>
+            Promuoviamo pratiche di sviluppo sostenibili e ci impegniamo a
+            ridurre l'impatto ambientale delle soluzioni tecnologiche che
+            creiamo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Back to Top Component -->
-    <div data-component="back-to-top"></div>
+  <!-- Team Section -->
+  <section class="our-team">
+    <div class="container">
+      <div class="section-header">
+        <h2>Il nostro team</h2>
+        <p>
+          Professionisti appassionati che rendono possible la trasformazione
+          digitale
+        </p>
+      </div>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+      <div class="team-leadership">
+        <h3 class="team-category-title">Leadership</h3>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-photo">
+              <!-- Placeholder per la photo del membro del team -->
+              <div class="photo-placeholder"></div>
+            </div>
+            <div class="member-info">
+              <h4>Marco Bianchi</h4>
+              <span class="member-role">CEO & Co-fondatore</span>
+              <p>
+                Con oltre 15 anni di esperienza nel settore IT, guida la
+                visione strategica di Orionware.
+              </p>
+              <div class="member-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-photo">
+              <div class="photo-placeholder"></div>
+            </div>
+            <div class="member-info">
+              <h4>Laura Rossi</h4>
+              <span class="member-role">CTO & Co-fondatrice</span>
+              <p>
+                Esperta in architetture software e intelligenza artificiale,
+                sovrintende tutti gli sviluppi tecnologici.
+              </p>
+              <div class="member-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-photo">
+              <div class="photo-placeholder"></div>
+            </div>
+            <div class="member-info">
+              <h4>Antonio Verdi</h4>
+              <span class="member-role">Chief Innovation Officer</span>
+              <p>
+                Anticipa le tendenze tecnologiche e guida i progetti di R&D
+                aziendali con un focus sull'AI.
+              </p>
+              <div class="member-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-departments">
+        <div class="department">
+          <h3 class="team-category-title">Sviluppo Software</h3>
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="member-photo">
+                <div class="photo-placeholder"></div>
+              </div>
+              <div class="member-info">
+                <h4>Luca Ferrari</h4>
+                <span class="member-role">Lead Developer</span>
+                <div class="member-social">
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-member">
+              <div class="member-photo">
+                <div class="photo-placeholder"></div>
+              </div>
+              <div class="member-info">
+                <h4>Sofia Romano</h4>
+                <span class="member-role">Frontend Specialist</span>
+                <div class="member-social">
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="CodePen"><i class="fab fa-codepen"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-member">
+              <div class="member-photo">
+                <div class="photo-placeholder"></div>
+              </div>
+              <div class="member-info">
+                <h4>Matteo Conti</h4>
+                <span class="member-role">Backend Developer</span>
+                <div class="member-social">
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="department">
+          <h3 class="team-category-title">AI & Data Science</h3>
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="member-photo">
+                <div class="photo-placeholder"></div>
+              </div>
+              <div class="member-info">
+                <h4>Elena Martini</h4>
+                <span class="member-role">Lead Data Scientist</span>
+                <div class="member-social">
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-member">
+              <div class="member-photo">
+                <div class="photo-placeholder"></div>
+              </div>
+              <div class="member-info">
+                <h4>Simone Ricci</h4>
+                <span class="member-role">ML Engineer</span>
+                <div class="member-social">
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-member">
+              <div class="member-photo">
+                <div class="photo-placeholder"></div>
+              </div>
+              <div class="member-info">
+                <h4>Chiara Lombardi</h4>
+                <span class="member-role">AI Researcher</span>
+                <div class="member-social">
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="join-team-banner">
+        <div class="join-content">
+          <h3>Unisciti al nostro team</h3>
+          <p>
+            Cerchiamo talenti appassionati di tecnologia e innovazione. Scopri
+            le opportunità di carriera in Orionware.
+          </p>
+          <a href="#" class="btn btn-primary">Posizioni aperte</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Office Location Section -->
+  <section class="our-offices">
+    <div class="container">
+      <div class="section-header">
+        <h2>Dove siamo</h2>
+        <p>La nostra sede principale e presenza sul territorio</p>
+      </div>
+
+      <div class="offices-grid">
+        <div class="office-info">
+          <div class="office-details">
+            <h3>Sede Principale - Milano</h3>
+            <address>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Via dell'Innovazione, 42
+                - 20126 Milano
+              </p>
+              <p><i class="fas fa-phone"></i> +39 0123 456789</p>
+              <p><i class="fas fa-envelope"></i> info@orionware.it</p>
+            </address>
+            <div class="office-hours">
+              <h4>Orari di apertura:</h4>
+              <p>Lunedì - Venerdì: 9:00 - 18:00</p>
+              <p>Sabato - Domenica: Chiuso</p>
+            </div>
+            <a href="contatti.html" class="btn btn-outline">Contattaci</a>
+          </div>
+        </div>
+        <div class="office-map">
+          <!-- Mappa interattiva con Leaflet -->
+          <div class="map-container">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="our-partners">
+    <div class="container">
+      <div class="section-header">
+        <h2>I nostri partner</h2>
+        <p>
+          Collaboriamo con i migliori per offrire soluzioni all'avanguardia
+        </p>
+      </div>
+
+      <div class="partners-grid">
+        <div class="partner-item">
+          <div class="partner-logo">
+            <div class="logo-placeholder">AWS</div>
+          </div>
+          <h3>Amazon Web Services</h3>
+          <p>Partner certificato per soluzioni cloud</p>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-logo">
+            <div class="logo-placeholder">MSFT</div>
+          </div>
+          <h3>Microsoft</h3>
+          <p>Gold Partner per soluzioni di business intelligence</p>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-logo">
+            <div class="logo-placeholder">GCP</div>
+          </div>
+          <h3>Google Cloud</h3>
+          <p>Partner per soluzioni di machine learning</p>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-logo">
+            <div class="logo-placeholder">IBM</div>
+          </div>
+          <h3>IBM</h3>
+          <p>Partner tecnologico per soluzioni cognitive</p>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-logo">
+            <div class="logo-placeholder">NVIDIA</div>
+          </div>
+          <h3>NVIDIA</h3>
+          <p>Partner per accelerazione GPU in AI</p>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-logo">
+            <div class="logo-placeholder">SAP</div>
+          </div>
+          <h3>SAP</h3>
+          <p>Partner per integrazioni enterprise</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Component -->
+  <div data-component="cta" data-param-title="Pronto a collaborare con il nostro team?"
+    data-param-description="Contattaci oggi stesso per discutere delle tue esigenze tecnologiche e scoprire come possiamo aiutarti a raggiungere i tuoi obiettivi."
+    data-param-button-text="Parliamo del tuo progetto" data-param-phone="+39 0123 456789"></div>
+
+  <!-- Footer Component -->
+  <div data-component="footer"></div>
+
+  <!-- Back to Top Component -->
+  <div data-component="back-to-top"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+
+  <!-- Map Initialization Script -->
+  <script>
+    // Initialize the map
+    var map = L.map("map").setView([43.5532168, 11.5908011], 50);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: null,
+      attributionControl: false,
+    }).addTo(map);
+
+    // Add a marker for Orionware office
+    L.marker([43.5532168, 11.5908011])
+      .addTo(map)
+      .bindPopup(
+        "Orionware<br>Sede Principale - Terranuova Bracciolini<br>Via Vittorio Veneto, 19",
+      )
+      .openPopup();
+  </script>
 </body>
+
 </html>
