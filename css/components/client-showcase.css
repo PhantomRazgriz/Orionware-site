@@ -1,0 +1,267 @@
+/* 
+   Orionware - Client Showcase Component
+   Sezione "I nostri clienti" con rotazione automatica
+*/
+
+/* ===== CLIENTS SECTION ===== */
+.clients-section {
+    background-color: var(--secondary);
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-xl) 0;
+}
+
+/* Background overlay identico al testimonials esistente */
+.clients-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(30, 21, 41, 0.7) 0%, rgba(63, 34, 69, 0.3) 70%);
+    z-index: 1;
+}
+
+.clients-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.clients-section .section-header h2 {
+    color: var(--light);
+}
+
+/* Contenitore per il logo singolo */
+.client-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    position: relative;
+    margin-bottom: var(--spacing-lg);
+}
+
+.client-logo {
+    width: 280px;
+    height: 140px;
+    background-color: rgba(30, 21, 41, 0.7);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    border-top: 3px solid var(--primary);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all var(--transition-slow);
+    position: absolute;
+     z-index: 1;
+    visibility: hidden;
+}
+
+.logo-image {
+    max-width: 70%; /* Ridotto dal 80% al 70% */
+    max-height: 70%; /* Ridotto dal 80% al 70% */
+    object-fit: contain; /* Mantiene le proporzioni */
+    filter: brightness(1) contrast(1);
+    transition: all var(--transition-normal);
+}
+
+.client-logo:hover .logo-image {
+    filter: brightness(1.1) contrast(1.1);
+    transform: scale(1.05);
+}
+
+.client-logo.active {
+    opacity: 1;
+    transform: translateY(0);
+      z-index: 2; /* AGGIUNGI QUESTA RIGA */
+    visibility: visible; /* AGGIUNGI QUESTA RIGA */
+}
+
+
+.client-logo.fade-out {
+    opacity: 0;
+    transform: translateY(-30px);
+     opacity: 0;
+    transform: translateY(-30px);
+    z-index: 1; /* AGGIUNGI QUESTA RIGA */
+    visibility: hidden; /* AGGIUNGI QUESTA RIGA */
+}
+
+/* Logo content con lo stesso stile del testo testimonials */
+.logo-content {
+    text-align: center;
+    color: var(--light);
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: var(--spacing-md);
+}
+
+/* Progress bar per mostrare il timing */
+.progress-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto var(--spacing-md);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    height: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    width: 0%;
+    animation: progress 4s linear infinite;
+}
+
+@keyframes progress {
+    0% { width: 0%; }
+    95% { width: 100%; }
+    100% { width: 100%; }
+}
+
+/* Indicatori (dots) identici al testimonials originale */
+.client-indicators {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+}
+
+.indicator-dot.active {
+    background-color: var(--primary);
+    box-shadow: 0 0 10px rgba(207, 53, 75, 0.5);
+}
+
+.indicator-dot:hover {
+    background-color: rgba(207, 53, 75, 0.7);
+    transform: scale(1.2);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Tablets and smaller desktops */
+@media (max-width: 992px) {
+    .client-logo {
+        width: 250px;
+        height: 120px;
+    }
+    
+    .logo-content {
+        font-size: 1.2rem;
+        padding: var(--spacing-sm);
+    }
+    
+    .clients-section {
+        padding: var(--spacing-lg) 0;
+    }
+}
+
+/* Tablets and large phones */
+@media (max-width: 768px) {
+    .client-logo {
+        width: 220px;
+        height: 100px;
+    }
+    
+    .logo-content {
+        font-size: 1.1rem;
+    }
+    
+    .client-showcase {
+        min-height: 150px;
+    }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+    .client-logo {
+        width: 200px;
+        height: 90px;
+    }
+    
+    .logo-content {
+        font-size: 1rem;
+        padding: var(--spacing-xs);
+    }
+    
+    .client-showcase {
+        min-height: 130px;
+    }
+    
+    .progress-container {
+        max-width: 250px;
+    }
+}
+
+/* Fix for larger screens */
+@media (min-width: 1400px) {
+    .client-logo {
+        width: 320px;
+        height: 160px;
+    }
+    
+    .logo-content {
+        font-size: 1.6rem;
+    }
+}
+
+/* Print styles - nasconde la sezione clienti */
+@media print {
+    .clients-section {
+        display: none !important;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-contrast: more) {
+    .logo-content {
+        color: #fff;
+        text-shadow: 0 0 4px #000;
+    }
+    
+    .indicator-dot {
+        border: 2px solid #fff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .client-logo {
+        transition: opacity var(--transition-fast);
+        transform: none;
+    }
+    
+    .client-logo.active {
+        transform: none;
+    }
+    
+    .client-logo.fade-out {
+        transform: none;
+    }
+    
+    .progress-bar {
+        animation: none;
+    }
+    
+    .indicator-dot:hover {
+        transform: none;
+    }
+}
