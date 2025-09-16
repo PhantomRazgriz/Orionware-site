@@ -1,7 +1,7 @@
 /**
  * Orionware - Client Showcase Component
  * Gestisce la rotazione automatica dei loghi clienti
- * Versione: 1.0
+ * Versione: 1.1 - Fix sovrapposizione loghi
  */
 
 class ClientShowcase {
@@ -29,10 +29,42 @@ class ClientShowcase {
     }
     
     /**
+     * Imposta lo stato iniziale corretto per evitare sovrapposizioni
+     */
+    setupInitialState() {
+        console.log('ClientShowcase: Impostazione stato iniziale...');
+        
+        // Nascondi tutti i loghi
+        this.logos.forEach((logo, index) => {
+            logo.classList.remove('active', 'fade-out');
+            if (index === 0) {
+                // Mostra solo il primo logo
+                logo.classList.add('active');
+            }
+        });
+        
+        // Attiva il primo dot
+        this.dots.forEach((dot, index) => {
+            dot.classList.remove('active');
+            if (index === 0) {
+                dot.classList.add('active');
+            }
+        });
+        
+        // Reset dell'indice
+        this.currentIndex = 0;
+        
+        console.log('ClientShowcase: Stato iniziale impostato - Logo 0 attivo');
+    }
+    
+    /**
      * Inizializza il componente
      */
     init() {
         console.log('ClientShowcase: Inizializzazione...');
+        
+        // Imposta lo stato iniziale corretto - FIX per sovrapposizione
+        this.setupInitialState();
         
         // Aggiungi event listeners ai dots
         this.dots.forEach((dot, index) => {
@@ -80,6 +112,8 @@ class ClientShowcase {
             return;
         }
         
+        console.log(`ClientShowcase: Passaggio da ${this.currentIndex} a ${index}`);
+        
         // Rimuovi classe active dal logo corrente
         this.logos[this.currentIndex].classList.remove('active');
         this.logos[this.currentIndex].classList.add('fade-out');
@@ -124,50 +158,49 @@ class ClientShowcase {
         }, this.duration);
         
         // Avvia l'animazione della progress bar
-        this.startProgressBar();
+        this.restartProgressBar();
+        
+        console.log('ClientShowcase: Rotazione automatica avviata');
     }
     
     /**
      * Ferma la rotazione automatica
      */
-    stopAutoRotation() {
-        this.clearIntervals();
-    }
-    
-    /**
-     * Mette in pausa la rotazione
-     */
     pause() {
-        this.stopAutoRotation();
-        
-        // Pausa anche l'animazione CSS della progress bar
-        if (this.progressBar) {
-            this.progressBar.style.animationPlayState = 'paused';
+        if (this.interval) {
+            clearInterval(this.interval);
+            this.interval = null;
+            
+            // Pausa anche l'animazione della progress bar
+            if (this.progressBar) {
+                this.progressBar.style.animationPlayState = 'paused';
+            }
+            
+            console.log('ClientShowcase: Rotazione in pausa');
         }
     }
     
     /**
-     * Riprende la rotazione
+     * Riprende la rotazione automatica
      */
     resume() {
-        this.startAutoRotation();
-        
-        // Riprende l'animazione CSS della progress bar
-        if (this.progressBar) {
-            this.progressBar.style.animationPlayState = 'running';
+        if (!this.interval) {
+            this.startAutoRotation();
+            
+            // Riprende l'animazione della progress bar
+            if (this.progressBar) {
+                this.progressBar.style.animationPlayState = 'running';
+            }
+            
+            console.log('ClientShowcase: Rotazione ripresa');
         }
     }
     
     /**
-     * Reset dell'interval (chiamato quando l'utente interagisce manualmente)
+     * Reset degli interval (per i click sui dots)
      */
     resetInterval() {
-        this.stopAutoRotation();
-        
-        // Riavvia dopo un breve delay
-        setTimeout(() => {
-            this.startAutoRotation();
-        }, 1000);
+        this.startAutoRotation();
     }
     
     /**
@@ -185,42 +218,23 @@ class ClientShowcase {
     }
     
     /**
-     * Avvia l'animazione della progress bar
-     */
-    startProgressBar() {
-    if (this.progressBar) {
-        // Reset completo
-        this.progressBar.style.animation = 'none';
-        this.progressBar.style.width = '0%';
-        
-        // Forza il reflow
-        this.progressBar.offsetHeight;
-        
-        // Riavvia con un piccolo delay per assicurare il reset
-        setTimeout(() => {
-            this.progressBar.style.animation = 'progress 4s linear infinite';
-        }, 50);
-    }
-}
-    
-    /**
      * Restart dell'animazione della progress bar
      */
     restartProgressBar() {
-    if (this.progressBar) {
-        // Forza il reset completo dell'animazione
-        this.progressBar.style.animation = 'none';
-        this.progressBar.style.width = '0%';
-        
-        // Forza il reflow del browser
-        this.progressBar.offsetHeight;
-        
-        // Riapplica l'animazione
-        requestAnimationFrame(() => {
-            this.progressBar.style.animation = 'progress 4s linear infinite';
-        });
+        if (this.progressBar) {
+            // Forza il reset completo dell'animazione
+            this.progressBar.style.animation = 'none';
+            this.progressBar.style.width = '0%';
+            
+            // Forza il reflow del browser
+            this.progressBar.offsetHeight;
+            
+            // Riapplica l'animazione dopo un frame
+            requestAnimationFrame(() => {
+                this.progressBar.style.animation = 'progress 4s linear infinite';
+            });
+        }
     }
-}
     
     /**
      * Distruggi il componente (cleanup)
@@ -238,6 +252,8 @@ class ClientShowcase {
         
         // Reset dello stato
         this.currentIndex = 0;
+        
+        console.log('ClientShowcase: Cleanup completato');
     }
 }
 
@@ -251,6 +267,7 @@ function initClientShowcase() {
     if (clientsSection) {
         // Crea una nuova istanza del componente
         window.clientShowcase = new ClientShowcase();
+        console.log('ClientShowcase: Componente inizializzato con successo');
     } else {
         console.log('ClientShowcase: Sezione non trovata, skip inizializzazione');
     }
@@ -260,6 +277,7 @@ function initClientShowcase() {
 if (document.readyState === 'loading') {
     // DOM non ancora caricato
     document.addEventListener('DOMContentLoaded', initClientShowcase);
+    console.log('ClientShowcase: In attesa del DOM...');
 } else {
     // DOM già caricato
     initClientShowcase();
