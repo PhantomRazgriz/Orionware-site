@@ -1,7 +1,7 @@
 /* 
-   Orionware - Client Showcase Component VERSIONE 3.0
+   Orionware - Client Showcase Component VERSIONE 3.1 - FIXED COMPLETO
    Animazione slide orizzontale: DESTRA → CENTRO → SINISTRA
-   COMPLETAMENTE RISCRITTA - NO CONFLITTI
+   FIX: Risolti conflitti tra tooltip e external link indicator
 */
 
 /* ===== CLIENTS SECTION ===== */
@@ -33,19 +33,19 @@
     color: var(--light);
 }
 
-/* ===== SHOWCASE CONTAINER - NUOVO SISTEMA ===== */
+/* ===== SHOWCASE CONTAINER ===== */
 .client-showcase {
     position: relative;
     width: 100%;
-    height: 280px; /* Altezza fissa per evitare salti */
-    overflow: hidden;
+    height: 280px;
+    overflow: visible; /* CAMBIATO: era hidden, ora visible per i tooltip */
     margin-bottom: var(--spacing-lg);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* ===== SLIDE SYSTEM - COMPLETAMENTE NUOVO ===== */
+/* ===== SLIDE SYSTEM ===== */
 .client-slide {
     position: absolute;
     top: 0;
@@ -88,20 +88,24 @@
     z-index: 1;
 }
 
-/* ===== CLIENT LINK WRAPPER ===== */
+/* ===== CLIENT LINK WRAPPER - DIMENSIONI CORRETTE ===== */
 .client-link {
     display: block;
-    width: 100%;
-    height: 100%;
+    /* FIX PRINCIPALE: Limita le dimensioni del link al logo stesso */
+    width: 400px;
+    height: 200px;
     text-decoration: none;
     cursor: pointer;
     transition: all var(--transition-normal);
+    position: relative;
+    /* Centra il link all'interno della slide */
+    margin: 0 auto;
 }
 
-/* ===== CLIENT LOGO - COMPLETAMENTE RIDEFINITO ===== */
+/* ===== CLIENT LOGO - DIMENSIONI RELATIVE AL LINK ===== */
 .client-logo {
-    width: 400px;
-    height: 200px;
+    width: 100%; /* Ora usa il 100% del client-link (400px) */
+    height: 100%; /* Ora usa il 100% del client-link (200px) */
     background-color: rgba(30, 21, 41, 0.7);
     border-radius: var(--radius-lg);
     display: flex;
@@ -116,11 +120,10 @@
     position: relative;
     overflow: hidden;
     
-    /* RESET COMPLETO - NO POSITION ABSOLUTE, NO TRANSFORM Y */
-    position: static;
+    /* FIX PRINCIPALE: Rimosso transform: none che causava il conflitto */
     opacity: 1;
     visibility: visible;
-    transform: none;
+    /* NON più position: static - resta relative */
 }
 
 /* ===== LOGO IMAGE ===== */
@@ -143,21 +146,7 @@
     transform: scale(1.05);
 }
 
-/* ===== EXTERNAL LINK INDICATOR ===== */
-.client-link::after {
-    content: '';
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 24px;
-    height: 24px;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    opacity: 0;
-    transition: all var(--transition-normal);
-    z-index: 5;
-}
-
+/* ===== EXTERNAL LINK INDICATOR (Icona) ===== */
 .client-link::before {
     content: '\f35d'; /* Font Awesome external link icon */
     font-family: 'Font Awesome 5 Free';
@@ -167,70 +156,74 @@
     right: 20px;
     font-size: 12px;
     color: white;
+    background: var(--gradient-primary);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
     transition: all var(--transition-normal);
     z-index: 6;
 }
 
-.client-link:hover::after,
 .client-link:hover::before {
     opacity: 1;
 }
 
-/* ===== TOOLTIPS PERSONALIZZATI ===== */
-.client-slide[data-client="altermaind"] .client-link:hover::after {
+/* ===== TOOLTIPS PERSONALIZZATI (Testo) ===== */
+/* Utilizziamo un approccio diverso per i tooltip per evitare conflitti */
+.client-slide[data-client="altermaind"] .client-link::after {
     content: 'Visita Altermaind →';
 }
 
-.client-slide[data-client="family-nation"] .client-link:hover::after {
+.client-slide[data-client="family-nation"] .client-link::after {
     content: 'Visita Family Nation →';
 }
 
-.client-slide[data-client="illimity"] .client-link:hover::after {
+.client-slide[data-client="illimity"] .client-link::after {
     content: 'Visita Illimity Bank →';
 }
 
-.client-slide[data-client="mg-group"] .client-link:hover::after {
+.client-slide[data-client="mg-group"] .client-link::after {
     content: 'Visita MG Group →';
 }
 
-.client-slide[data-client="qnary"] .client-link:hover::after {
+.client-slide[data-client="qnary"] .client-link::after {
     content: 'Visita Qnary →';
 }
 
-.client-slide[data-client="rmbg"] .client-link:hover::after {
+.client-slide[data-client="rmbg"] .client-link::after {
     content: 'Visita Remove.bg →';
 }
 
-/* Stili tooltip generici */
-.client-link:hover::after {
+/* Stili generici per tutti i tooltip */
+.client-link::after {
     position: absolute;
-    bottom: -40px;
+    bottom: -50px; /* Aumentato spazio per evitare sovrapposizioni */
     left: 50%;
     transform: translateX(-50%);
     background: rgba(30, 21, 41, 0.95);
     color: var(--light);
-    padding: 10px 16px;
+    padding: 12px 18px;
     border-radius: var(--radius-sm);
     font-size: 0.9rem;
     font-weight: 500;
     white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(207, 53, 75, 0.3);
-    z-index: 10;
-    opacity: 1;
-    animation: tooltipSlideIn 0.3s ease-out;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(207, 53, 75, 0.4);
+    z-index: 15; /* Aumentato z-index per essere sopra tutto */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+    pointer-events: none;
 }
 
-@keyframes tooltipSlideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
+.client-link:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-8px);
 }
 
 /* ===== PROGRESS BAR ===== */
@@ -263,6 +256,7 @@
     display: flex;
     justify-content: center;
     gap: var(--spacing-xs);
+    margin-top: var(--spacing-md); /* Aggiunto margine per separare dai tooltip */
 }
 
 .indicator-dot {
@@ -290,7 +284,7 @@
 
 /* Large desktops */
 @media (min-width: 1400px) {
-    .client-logo {
+    .client-link {
         width: 450px;
         height: 225px;
     }
@@ -302,7 +296,7 @@
 
 /* Tablets and smaller desktops */
 @media (max-width: 992px) {
-    .client-logo {
+    .client-link {
         width: 350px;
         height: 175px;
     }
@@ -318,7 +312,7 @@
 
 /* Tablets and large phones */
 @media (max-width: 768px) {
-    .client-logo {
+    .client-link {
         width: 300px;
         height: 150px;
     }
@@ -327,27 +321,28 @@
         height: 180px;
     }
     
-    .client-link:hover::after {
+    .client-link::after {
         font-size: 0.8rem;
-        padding: 8px 12px;
-        bottom: -35px;
+        padding: 10px 14px;
+        bottom: -45px;
     }
 }
 
 /* Small mobile phones */
 @media (max-width: 480px) {
-    .client-logo {
+    .client-link {
         width: 280px;
         height: 140px;
     }
     
     .client-showcase {
         height: 160px;
+        overflow: hidden; /* Su mobile nascondiamo overflow per i tooltip */
     }
     
     .client-link::after,
     .client-link::before {
-        display: none; /* Nascondi l'icona sui touch device */
+        display: none; /* Nascondi tooltip e icona sui touch device */
     }
     
     .progress-container {
@@ -357,7 +352,7 @@
 
 /* Very small screens */
 @media (max-width: 360px) {
-    .client-logo {
+    .client-link {
         width: 260px;
         height: 130px;
     }
@@ -409,6 +404,6 @@
     }
     
     .client-link:hover .client-logo {
-        transform: none;
+        transform: translateY(-5px); /* Manteniamo solo translateY, non scale */
     }
 }
