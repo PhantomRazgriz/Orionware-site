@@ -17,6 +17,11 @@ class ClientShowcase {
         this.duration = 4000; // 4 secondi per slide
         this.animationDuration = 800; // Durata transizione CSS
         
+        // Progress bar tracking
+        this.progressStartTime = null;
+        this.progressElapsed = 0;
+        this.isProgressPaused = false;
+        
         // Verifica se gli elementi esistono
         if (this.slides.length === 0 || this.dots.length === 0) {
             console.warn('ClientShowcase: Elementi non trovati nella pagina');
@@ -80,8 +85,8 @@ class ClientShowcase {
         // Event listeners per hover (pausa rotazione)
         const showcase = document.querySelector('.client-showcase');
         if (showcase) {
-            showcase.addEventListener('mouseenter', () => this.pauseAutoRotation());
-            showcase.addEventListener('mouseleave', () => this.startAutoRotation());
+            showcase.addEventListener('mouseenter', () => this.pauseProgress());
+            showcase.addEventListener('mouseleave', () => this.resumeProgress());
         }
         
         // Event listeners per i link clienti
@@ -129,6 +134,9 @@ class ClientShowcase {
         
         const currentSlide = this.slides[this.currentIndex];
         const targetSlide = this.slides[targetIndex];
+        
+        // Reset progress per la nuova slide
+        this.resetProgress();
         
         // FASE 1: Slide corrente esce verso sinistra
         if (currentSlide) {
@@ -179,18 +187,101 @@ class ClientShowcase {
     startAutoRotation() {
         this.pauseAutoRotation();
         
+        this.progressStartTime = Date.now();
+        this.progressElapsed = 0;
+        this.isProgressPaused = false;
+        
         this.interval = setInterval(() => {
             this.nextSlide();
         }, this.duration);
         
-        // Restart progress bar animation
+        // Start progress bar animation
+        this.startProgressAnimation();
+        
+        console.log('ClientShowcase: Rotazione automatica avviata');
+    }
+    
+    /**
+     * Avvia l'animazione della progress bar
+     */
+    startProgressAnimation() {
         if (this.progressBar) {
             this.progressBar.style.animation = 'none';
             this.progressBar.offsetHeight; // Trigger reflow
             this.progressBar.style.animation = `progress ${this.duration}ms linear infinite`;
         }
+    }
+    
+    /**
+     * Pausa progress bar e rotazione
+     */
+    pauseProgress() {
+        if (this.isProgressPaused) return;
         
-        console.log('ClientShowcase: Rotazione automatica avviata');
+        // Calcola tempo trascorso
+        if (this.progressStartTime) {
+            this.progressElapsed += Date.now() - this.progressStartTime;
+        }
+        
+        // Pausa rotazione automatica
+        this.pauseAutoRotation();
+        
+        // Pausa animazione progress bar
+        if (this.progressBar) {
+            this.progressBar.style.animationPlayState = 'paused';
+        }
+        
+        this.isProgressPaused = true;
+        console.log('ClientShowcase: Progress pausata');
+    }
+    
+    /**
+     * Riprende progress bar e rotazione
+     */
+    resumeProgress() {
+        if (!this.isProgressPaused) return;
+        
+        // Calcola tempo rimanente
+        const remainingTime = this.duration - (this.progressElapsed % this.duration);
+        
+        // Riprendi rotazione automatica con tempo rimanente
+        this.interval = setInterval(() => {
+            this.nextSlide();
+        }, remainingTime);
+        
+        // Dopo il primo ciclo, torna al timing normale
+        setTimeout(() => {
+            if (this.interval) {
+                clearInterval(this.interval);
+                this.interval = setInterval(() => {
+                    this.nextSlide();
+                }, this.duration);
+            }
+        }, remainingTime);
+        
+        // Riprendi animazione progress bar
+        if (this.progressBar) {
+            this.progressBar.style.animationPlayState = 'running';
+        }
+        
+        this.progressStartTime = Date.now();
+        this.isProgressPaused = false;
+        console.log('ClientShowcase: Progress ripresa');
+    }
+    
+    /**
+     * Reset progress bar per nuova slide
+     */
+    resetProgress() {
+        this.progressStartTime = Date.now();
+        this.progressElapsed = 0;
+        this.isProgressPaused = false;
+        
+        if (this.progressBar) {
+            this.progressBar.style.animation = 'none';
+            this.progressBar.offsetHeight; // Trigger reflow
+            this.progressBar.style.animation = `progress ${this.duration}ms linear infinite`;
+        }
     }
     
     /**
