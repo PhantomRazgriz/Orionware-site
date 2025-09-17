@@ -40,6 +40,16 @@ footer .container {
     margin-bottom: var(--spacing-md);
 }
 
+.footer-logo-image {
+    height: 50px;
+    width: auto;
+    transition: all var(--transition-normal);
+}
+
+.footer-logo-image:hover {
+    opacity: 0.8;
+}
+
 .footer-column p {
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: var(--spacing-md);

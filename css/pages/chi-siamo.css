@@ -251,7 +251,7 @@
     z-index: 2;
     margin-bottom: 0;
 }
-/* ===== TEAM SECTION ===== */
+/* ===== FOUNDERS SECTION - UPDATED STYLES ===== */
 .our-team {
     background-color: var(--secondary);
     padding: var(--spacing-xl) 0;
@@ -274,165 +274,332 @@
     z-index: 2;
 }
 
-.team-category-title {
-    font-size: 1.8rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--light);
-    text-align: center;
-    position: relative;
-    display: inline-block;
+/* Founders Grid - Layout per 2 persone impattante */
+.founders-section {
+    margin-top: var(--spacing-lg);
 }
 
-.team-category-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-image: var(--gradient-primary);
-    border-radius: var(--radius-full);
-}
-
-.team-leadership, .department {
-    margin-bottom: var(--spacing-xl);
-}
-
-.team-grid {
+.founders-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-md);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-xl);
 }
 
-.team-member {
-    background-color: rgba(30, 21, 41, 0.7);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.team-member:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
-
-.member-photo {
-    height: 250px;
-    position: relative;
-    overflow: hidden;
-}
-
-.photo-placeholder {
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(135deg, rgba(63, 34, 69, 0.8), rgba(30, 21, 41, 0.8));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.2);
-    font-size: 3rem;
-}
-
-.photo-placeholder::after {
-    content: '\f007';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-}
-
-.member-info {
-    padding: var(--spacing-md);
-}
-
-.member-info h4 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-    color: var(--light);
-}
-
-.member-role {
-    display: block;
-    color: var(--primary-light);
-    font-size: 0.9rem;
-    margin-bottom: var(--spacing-sm);
-}
-
-.member-info p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.95rem;
-    margin-bottom: var(--spacing-sm);
-}
-
-.member-social {
-    display: flex;
-    gap: 10px;
-}
-
-.member-social a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 36px;
-    height: 36px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: var(--light);
-    transition: all var(--transition-normal);
-}
-
-.member-social a:hover {
-    background-color: var(--primary);
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(207, 53, 75, 0.5);
-}
-
-.join-team-banner {
-    background-image: linear-gradient(135deg, rgba(207, 53, 75, 0.3), rgba(63, 34, 69, 0.3));
+/* Founder Card - Design premium */
+.founder-card {
+    background: linear-gradient(135deg, rgba(30, 21, 41, 0.9), rgba(63, 34, 69, 0.7));
     border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
-    text-align: center;
-    position: relative;
     overflow: hidden;
-    margin-top: var(--spacing-xl);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-normal);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
 }
 
-.join-team-banner::before {
+.founder-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(207, 53, 75, 0.4), transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(63, 34, 69, 0.4), transparent 40%);
-    z-index: 1;
-}
-
-.join-content {
-    position: relative;
+    height: 4px;
+    background: var(--gradient-primary);
     z-index: 2;
-    max-width: 700px;
-    margin: 0 auto;
 }
 
-.join-content h3 {
-    font-size: 2rem;
-    margin-bottom: var(--spacing-sm);
+.founder-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.founder-card:nth-child(1):hover {
+    box-shadow: 0 30px 60px rgba(207, 53, 75, 0.3);
+}
+
+.founder-card:nth-child(2):hover {
+    box-shadow: 0 30px 60px rgba(63, 34, 69, 0.4);
+}
+
+/* Photo Section */
+.founder-photo {
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+}
+
+.founder-photo .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(207, 53, 75, 0.8), rgba(63, 34, 69, 0.8));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 4rem;
+    position: relative;
+}
+
+.founder-photo .photo-placeholder::after {
+    content: '\f007';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+/* Badge Co-Founder */
+.founder-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--gradient-primary);
+    color: var(--light);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(207, 53, 75, 0.4);
+    z-index: 3;
+}
+
+/* Info Section */
+.founder-info {
+    padding: var(--spacing-lg);
+}
+
+.founder-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: var(--light);
+    font-weight: 700;
+}
+
+.founder-role {
+    display: block;
+    color: var(--primary-light);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Skill Tags */
+.founder-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: var(--spacing-md);
+}
+
+.skill-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(207, 53, 75, 0.3);
+    transition: all var(--transition-fast);
+}
+
+.skill-tag:hover {
+    background-color: rgba(207, 53, 75, 0.2);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Description */
+.founder-info p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Social Links - Design migliorato */
+.founder-social {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--light);
+    transition: all var(--transition-normal);
+    font-size: 1.1rem;
+}
+
+.social-link:hover {
+    background: var(--gradient-primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(207, 53, 75, 0.4);
+}
+
+/* Vision Statement Section */
+.founders-vision {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.vision-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(30, 21, 41, 0.8), rgba(63, 34, 69, 0.6));
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.vision-content::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    color: var(--primary);
+    font-family: Georgia, serif;
+    background: var(--secondary);
+    padding: 0 20px;
+}
+
+.vision-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: var(--spacing-md);
     color: var(--light);
 }
 
-.join-content p {
-    font-size: 1.1rem;
-    margin-bottom: var(--spacing-md);
-    color: rgba(255, 255, 255, 0.8);
+.vision-content blockquote {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    margin-bottom: var(--spacing-lg);
+    border: none;
+    padding: 0;
+}
+
+.vision-signature {
+    text-align: center;
+}
+
+.vision-signature span {
+    display: block;
+}
+
+.vision-signature span:first-child {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    margin-bottom: 5px;
+}
+
+.signature-title {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 992px) {
+    .founders-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        gap: var(--spacing-lg);
+    }
+    
+    .founder-photo {
+        height: 280px;
+    }
+    
+    .founder-info {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .founders-grid {
+        gap: var(--spacing-md);
+    }
+    
+    .founder-card {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .founder-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .founder-role {
+        font-size: 1rem;
+    }
+    
+    .founder-photo {
+        height: 250px;
+    }
+    
+    .vision-content {
+        padding: var(--spacing-md);
+    }
+    
+    .vision-content blockquote {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .our-team {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .founder-badge {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .founder-skills {
+        gap: 6px;
+    }
+    
+    .skill-tag {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .vision-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .vision-content::before {
+        font-size: 3rem;
+        top: -15px;
+    }
 }
 
 /* ===== OFFICES SECTION ===== */

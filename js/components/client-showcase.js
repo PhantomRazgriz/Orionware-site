@@ -1,25 +1,24 @@
 /**
  * Orionware - Client Showcase Component
- * Gestisce la rotazione automatica dei loghi clienti
- * Versione: 1.1 - Fix sovrapposizione loghi
+ * Animazione slide orizzontale: DESTRA → CENTRO → SINISTRA
+ * Versione: 3.0 - Slide animation
  */
 
 class ClientShowcase {
     constructor() {
         // Elementi DOM
-        this.logos = document.querySelectorAll('.client-logo');
+        this.slides = document.querySelectorAll('.client-slide');
         this.dots = document.querySelectorAll('.indicator-dot');
         this.progressBar = document.querySelector('.progress-bar');
         
         // Configurazione
         this.currentIndex = 0;
         this.interval = null;
-        this.progressInterval = null;
-        this.duration = 4000; // 4 secondi per logo
-        this.transitionDelay = 200; // Delay per le transizioni
+        this.duration = 4000; // 4 secondi per slide
+        this.animationDuration = 800; // Durata transizione CSS
         
         // Verifica se gli elementi esistono
-        if (this.logos.length === 0 || this.dots.length === 0) {
+        if (this.slides.length === 0 || this.dots.length === 0) {
             console.warn('ClientShowcase: Elementi non trovati nella pagina');
             return;
         }
@@ -29,17 +28,20 @@ class ClientShowcase {
     }
     
     /**
-     * Imposta lo stato iniziale corretto per evitare sovrapposizioni
+     * Imposta lo stato iniziale
      */
     setupInitialState() {
-        console.log('ClientShowcase: Impostazione stato iniziale...');
+        console.log('ClientShowcase: Impostazione stato iniziale slide...');
         
-        // Nascondi tutti i loghi
-        this.logos.forEach((logo, index) => {
-            logo.classList.remove('active', 'fade-out');
+        // Imposta tutte le slide come "entering" (fuori schermo a destra)
+        this.slides.forEach((slide, index) => {
+            slide.classList.remove('active', 'exiting', 'entering');
             if (index === 0) {
-                // Mostra solo il primo logo
-                logo.classList.add('active');
+                // Prima slide attiva al centro
+                slide.classList.add('active');
+            } else {
+                // Altre slide in attesa fuori schermo
+                slide.classList.add('entering');
             }
         });
         
@@ -51,239 +53,175 @@ class ClientShowcase {
             }
         });
         
-        // Reset dell'indice
         this.currentIndex = 0;
-        
-        console.log('ClientShowcase: Stato iniziale impostato - Logo 0 attivo');
+        console.log('ClientShowcase: Prima slide attiva al centro');
     }
     
     /**
      * Inizializza il componente
      */
     init() {
-        console.log('ClientShowcase: Inizializzazione...');
+        console.log('ClientShowcase: Inizializzazione animazione slide...');
         
-        // Imposta lo stato iniziale corretto - FIX per sovrapposizione
+        // Imposta stato iniziale
         this.setupInitialState();
         
-        // Aggiungi event listeners ai dots
+        // Event listeners per i dots
         this.dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
-                this.goToSlide(index);
-                this.resetInterval();
+                if (index !== this.currentIndex) {
+                    this.pauseAutoRotation();
+                    this.goToSlide(index);
+                    this.startAutoRotation();
+                }
             });
         });
         
-        // Gestisci la visibilità della pagina (pausa quando non è visibile)
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                this.pause();
-            } else {
-                this.resume();
+        // Event listeners per hover (pausa rotazione)
+        const showcase = document.querySelector('.client-showcase');
+        if (showcase) {
+            showcase.addEventListener('mouseenter', () => this.pauseAutoRotation());
+            showcase.addEventListener('mouseleave', () => this.startAutoRotation());
+        }
+        
+        // Event listeners per i link clienti
+        this.setupClientClickHandlers();
+        
+        // Avvia rotazione automatica
+        this.startAutoRotation();
+    }
+    
+    /**
+     * Configura i click sui link dei clienti
+     */
+    setupClientClickHandlers() {
+        this.slides.forEach((slide) => {
+            const link = slide.querySelector('.client-link');
+            if (link) {
+                link.addEventListener('click', (e) => {
+                    // Permettere click solo su slide attiva
+                    if (!slide.classList.contains('active')) {
+                        e.preventDefault();
+                        return false;
+                    }
+                    
+                    // Pausa temporanea dopo click
+                    this.pauseAutoRotation();
+                    setTimeout(() => {
+                        this.startAutoRotation();
+                    }, 8000);
+                    
+                    // Log per analytics
+                    const clientName = slide.getAttribute('data-client');
+                    console.log(`ClientShowcase: Click su ${clientName}`);
+                });
             }
         });
-        
-        // Pausa al hover sulla sezione
-        const clientsSection = document.querySelector('.clients-section');
-        if (clientsSection) {
-            clientsSection.addEventListener('mouseenter', () => this.pause());
-            clientsSection.addEventListener('mouseleave', () => this.resume());
-        }
-        
-        // Avvia la rotazione automatica
-        this.startAutoRotation();
-        
-        console.log(`ClientShowcase: Inizializzato con ${this.logos.length} loghi`);
     }
     
     /**
-     * Va a un slide specifico
-     * @param {number} index - Indice del slide di destinazione
+     * Animazione slide: DESTRA → CENTRO → SINISTRA
      */
-    goToSlide(index) {
-        // Validazione dell'indice
-        if (index < 0 || index >= this.logos.length) {
-            console.warn('ClientShowcase: Indice non valido:', index);
-            return;
+    goToSlide(targetIndex) {
+        if (targetIndex === this.currentIndex) return;
+        
+        console.log(`ClientShowcase: Slide ${this.currentIndex} → ${targetIndex}`);
+        
+        const currentSlide = this.slides[this.currentIndex];
+        const targetSlide = this.slides[targetIndex];
+        
+        // FASE 1: Slide corrente esce verso sinistra
+        if (currentSlide) {
+            currentSlide.classList.remove('active');
+            currentSlide.classList.add('exiting');
         }
         
-        // Se è già il slide corrente, non fare nulla
-        if (index === this.currentIndex) {
-            return;
-        }
-        
-        console.log(`ClientShowcase: Passaggio da ${this.currentIndex} a ${index}`);
-        
-        // Rimuovi classe active dal logo corrente
-        this.logos[this.currentIndex].classList.remove('active');
-        this.logos[this.currentIndex].classList.add('fade-out');
-        this.dots[this.currentIndex].classList.remove('active');
-        
-        // Dopo il delay di transizione, mostra il nuovo logo
+        // FASE 2: Nuova slide entra da destra (dopo piccolo delay)
         setTimeout(() => {
-            // Rimuovi fade-out dal logo precedente
-            this.logos[this.currentIndex].classList.remove('fade-out');
+            if (targetSlide) {
+                targetSlide.classList.remove('entering');
+                targetSlide.classList.add('active');
+            }
             
-            // Aggiorna l'indice corrente
-            this.currentIndex = index;
+            // Aggiorna dots
+            this.dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === targetIndex);
+            });
             
-            // Attiva il nuovo logo e dot
-            this.logos[this.currentIndex].classList.add('active');
-            this.dots[this.currentIndex].classList.add('active');
+            // Aggiorna indice
+            this.currentIndex = targetIndex;
             
-            // Restart dell'animazione della progress bar
-            this.restartProgressBar();
-            
-        }, this.transitionDelay);
+        }, 100); // Piccolo delay per transizione più fluida
+        
+        // FASE 3: Cleanup dopo animazione completata
+        setTimeout(() => {
+            // Reset di tutte le slide non attive
+            this.slides.forEach((slide, index) => {
+                if (index !== this.currentIndex) {
+                    slide.classList.remove('active', 'exiting');
+                    slide.classList.add('entering');
+                }
+            });
+        }, this.animationDuration);
     }
     
     /**
-     * Va al slide successivo
+     * Passa alla slide successiva
      */
     nextSlide() {
-        const nextIndex = (this.currentIndex + 1) % this.logos.length;
+        const nextIndex = (this.currentIndex + 1) % this.slides.length;
         this.goToSlide(nextIndex);
     }
     
     /**
-     * Avvia la rotazione automatica
+     * Avvia rotazione automatica
      */
     startAutoRotation() {
-        // Pulisci eventuali interval esistenti
-        this.clearIntervals();
+        this.pauseAutoRotation();
         
-        // Avvia il nuovo interval
         this.interval = setInterval(() => {
             this.nextSlide();
         }, this.duration);
         
-        // Avvia l'animazione della progress bar
-        this.restartProgressBar();
+        // Restart progress bar animation
+        if (this.progressBar) {
+            this.progressBar.style.animation = 'none';
+            this.progressBar.offsetHeight; // Trigger reflow
+            this.progressBar.style.animation = `progress ${this.duration}ms linear infinite`;
+        }
         
         console.log('ClientShowcase: Rotazione automatica avviata');
     }
     
     /**
-     * Ferma la rotazione automatica
+     * Ferma rotazione automatica
      */
-    pause() {
-        if (this.interval) {
-            clearInterval(this.interval);
-            this.interval = null;
-            
-            // Pausa anche l'animazione della progress bar
-            if (this.progressBar) {
-                this.progressBar.style.animationPlayState = 'paused';
-            }
-            
-            console.log('ClientShowcase: Rotazione in pausa');
-        }
-    }
-    
-    /**
-     * Riprende la rotazione automatica
-     */
-    resume() {
-        if (!this.interval) {
-            this.startAutoRotation();
-            
-            // Riprende l'animazione della progress bar
-            if (this.progressBar) {
-                this.progressBar.style.animationPlayState = 'running';
-            }
-            
-            console.log('ClientShowcase: Rotazione ripresa');
-        }
-    }
-    
-    /**
-     * Reset degli interval (per i click sui dots)
-     */
-    resetInterval() {
-        this.startAutoRotation();
-    }
-    
-    /**
-     * Pulisce tutti gli interval attivi
-     */
-    clearIntervals() {
+    pauseAutoRotation() {
         if (this.interval) {
             clearInterval(this.interval);
             this.interval = null;
         }
-        if (this.progressInterval) {
-            clearInterval(this.progressInterval);
-            this.progressInterval = null;
-        }
+        
+        console.log('ClientShowcase: Rotazione automatica fermata');
     }
     
     /**
-     * Restart dell'animazione della progress bar
-     */
-    restartProgressBar() {
-        if (this.progressBar) {
-            // Forza il reset completo dell'animazione
-            this.progressBar.style.animation = 'none';
-            this.progressBar.style.width = '0%';
-            
-            // Forza il reflow del browser
-            this.progressBar.offsetHeight;
-            
-            // Riapplica l'animazione dopo un frame
-            requestAnimationFrame(() => {
-                this.progressBar.style.animation = 'progress 4s linear infinite';
-            });
-        }
-    }
-    
-    /**
-     * Distruggi il componente (cleanup)
+     * Cleanup
      */
     destroy() {
-        console.log('ClientShowcase: Cleanup...');
-        
-        // Ferma tutti gli interval
-        this.clearIntervals();
-        
-        // Rimuovi event listeners (se necessario per SPA)
-        this.dots.forEach(dot => {
-            dot.replaceWith(dot.cloneNode(true));
-        });
-        
-        // Reset dello stato
-        this.currentIndex = 0;
-        
-        console.log('ClientShowcase: Cleanup completato');
+        this.pauseAutoRotation();
+        console.log('ClientShowcase: Componente distrutto');
     }
 }
 
-/**
- * Inizializza il componente quando il DOM è pronto
- */
-function initClientShowcase() {
-    // Verifica che gli elementi esistano prima di inizializzare
-    const clientsSection = document.querySelector('.clients-section');
-    
-    if (clientsSection) {
-        // Crea una nuova istanza del componente
-        window.clientShowcase = new ClientShowcase();
-        console.log('ClientShowcase: Componente inizializzato con successo');
-    } else {
-        console.log('ClientShowcase: Sezione non trovata, skip inizializzazione');
+// Inizializzazione
+document.addEventListener('DOMContentLoaded', () => {
+    window.clientShowcase = new ClientShowcase();
+});
+
+// Cleanup
+window.addEventListener('beforeunload', () => {
+    if (window.clientShowcase) {
+        window.clientShowcase.destroy();
     }
-}
-
-// Inizializzazione automatica
-if (document.readyState === 'loading') {
-    // DOM non ancora caricato
-    document.addEventListener('DOMContentLoaded', initClientShowcase);
-    console.log('ClientShowcase: In attesa del DOM...');
-} else {
-    // DOM già caricato
-    initClientShowcase();
-}
-
-// Export per uso in moduli (se necessario)
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = ClientShowcase;
-}
+});
