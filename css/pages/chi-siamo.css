@@ -251,6 +251,7 @@
     z-index: 2;
     margin-bottom: 0;
 }
+
 /* ===== FOUNDERS SECTION - UPDATED STYLES ===== */
 .our-team {
     background-color: var(--secondary);
@@ -518,90 +519,6 @@
     letter-spacing: 1px;
 }
 
-/* ===== RESPONSIVE STYLES ===== */
-@media (max-width: 992px) {
-    .founders-grid {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-        gap: var(--spacing-lg);
-    }
-    
-    .founder-photo {
-        height: 280px;
-    }
-    
-    .founder-info {
-        padding: var(--spacing-md);
-    }
-}
-
-@media (max-width: 768px) {
-    .founders-grid {
-        gap: var(--spacing-md);
-    }
-    
-    .founder-card {
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .founder-info h3 {
-        font-size: 1.5rem;
-    }
-    
-    .founder-role {
-        font-size: 1rem;
-    }
-    
-    .founder-photo {
-        height: 250px;
-    }
-    
-    .vision-content {
-        padding: var(--spacing-md);
-    }
-    
-    .vision-content blockquote {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .our-team {
-        padding: var(--spacing-lg) 0;
-    }
-    
-    .founder-badge {
-        top: 15px;
-        right: 15px;
-        padding: 6px 12px;
-        font-size: 0.75rem;
-    }
-    
-    .founder-skills {
-        gap: 6px;
-    }
-    
-    .skill-tag {
-        font-size: 0.75rem;
-        padding: 4px 8px;
-    }
-    
-    .social-link {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-    
-    .vision-content {
-        padding: var(--spacing-sm);
-    }
-    
-    .vision-content::before {
-        font-size: 3rem;
-        top: -15px;
-    }
-}
-
 /* ===== OFFICES SECTION ===== */
 .our-offices {
     background-color: var(--dark);
@@ -843,6 +760,20 @@
     .map-container {
         min-height: 300px;
     }
+    
+    .founders-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        gap: var(--spacing-lg);
+    }
+    
+    .founder-photo {
+        height: 280px;
+    }
+    
+    .founder-info {
+        padding: var(--spacing-md);
+    }
 }
 
 @media (max-width: 768px) {
@@ -868,6 +799,44 @@
     
     .partners-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .founders-grid {
+        gap: var(--spacing-md);
+    }
+    
+    .founder-card {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .founder-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .founder-role {
+        font-size: 1rem;
+    }
+    
+    .founder-photo {
+        height: 250px;
+    }
+    
+    /* Fix per "La nostra visione condivisa" su tablet */
+    .vision-content {
+        padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md) !important;
+    }
+    
+    .vision-content::before {
+        font-size: 3.5rem;
+        top: -18px;
+    }
+    
+    .vision-content h3 {
+        margin-top: var(--spacing-sm);
+    }
+    
+    .vision-content blockquote {
+        font-size: 1.1rem;
     }
 }
 
@@ -897,5 +866,46 @@
     
     .office-details h3 {
         font-size: 1.3rem;
+    }
+    
+    .our-team {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .founder-badge {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .founder-skills {
+        gap: 6px;
+    }
+    
+    .skill-tag {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* Fix per "La nostra visione condivisa" su mobile */
+    .vision-content {
+        padding: var(--spacing-lg) var(--spacing-sm) var(--spacing-sm) !important;
+    }
+    
+    .vision-content::before {
+        font-size: 3rem;
+        top: -15px;
+    }
+    
+    .vision-content h3 {
+        font-size: 1.4rem;
+        margin-top: var(--spacing-sm);
     }
 }
